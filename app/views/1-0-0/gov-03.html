@@ -1,0 +1,69 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        How is the board represented?
+      </h1>
+      
+        <p>Do not include co-opted governors.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="width-5">
+            Staff governors
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Include executive (ex-officio), principal or chief executive and other staff members who are governors
+          </div>
+          <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="width-5">
+            Student governors
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Include part-time students if applicable
+          </div>
+          <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="width-5">
+            Independent governors
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Not a member of staff at the organisation or in a representative position such as staff, student or parent
+          </div>
+          <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="width-5">
+            Parent governors
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Parent of a learner at the organisation. Not a member of staff at the organisation or in a representative position such as staff member or student
+          </div>
+          <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        </div>
+
+
+
+          <a href="gov-04.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </a>
+
+    </div>
+
+   
+  </div>
+
+{% endblock %}

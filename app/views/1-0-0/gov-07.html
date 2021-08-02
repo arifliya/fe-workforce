@@ -1,0 +1,54 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      
+
+    <div class="govuk-grid-column-two-thirds">
+
+      
+      
+      <h1 class="govuk-heading-xl">
+        Disability data
+      </h1>
+      
+      <p class="govuk-body">Enter figures for governors in applicable age ranges. You can use 0 or leave blank for age ranges that are not relevant</p>
+     
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="width-5">
+          How many board members consider themselves to have a disability?
+        </label>
+        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+      </div>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="width-5">
+          How many board members do not identify themselves as having a disability?
+        </label>
+        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+      </div>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="width-5">
+          How many prefer not to say?
+        </label>
+        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+      </div>
+      
+      <a href="gov-08.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </a>
+
+    </div>
+
+   
+  </div>
+
+{% endblock %}
