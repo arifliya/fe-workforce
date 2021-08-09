@@ -13,19 +13,24 @@
       {% include "./includes/gov_data_tag.html" %}  
       <h1 class="govuk-heading-l">
         What is the total number of board members allowed by your corporation's instrument and articles of association?
-       
       </h1>
       
-      
+      <form action="gov-03" method="post" class="form">
+
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--m" for="width-5">
             Record the specified board size
           </label>
-          <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text"></div>
+          <input class="govuk-input govuk-input--width-5" id="width-5" name="board-size" type="text">
+        </div>
+   
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+    
+      </form>
 
-          <a href="gov-03.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </a>
+
+
+          
 
     </div>
 

@@ -10,27 +10,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-          {% include "./includes/gov_data_tag.html" %}  
+        
 
     <h1 class="govuk-heading-l">Check your answers</h1>
 
     <h2 class="govuk-heading-m">Board details</h2>
     <p>Total number of board members allowed by your corporation's instrument and articles of association</p>
-    <p>17</p>
+    <p>{{ data['board-size'] }}</p>
 
     <h2 class="govuk-heading-m">How the board is represented</h2>
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        4 Staff governors
+          {{ data['staff-governors'] }} Staff governors
       </li>
       <li>
-        3 Student governors
+          {{ data['student-governors'] }} Student governors
       </li>
       <li>
-        4 Independent governors
+          {{ data['independent-governors'] }} Independent governors
       </li>
       <li>
-        1 Parent governor
+          {{ data['parent-governors'] }} Parent governor
       </li>
     </ul>
 
