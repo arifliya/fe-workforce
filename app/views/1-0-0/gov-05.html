@@ -16,45 +16,70 @@
       </h1>
       
       <p class="govuk-body">Enter figures into applicable gender categories</p>
-     
+
+      <form action="gov-06" method="post" class="form">
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="male">
           Male board members
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="male" name="male" type="text">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="female">
           Female board members
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="female" name="female" type="text">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="another">
           How many identify in another way?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="another" name="another" type="text">
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="pnts">
           How many prefer not to say?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="pnts" name="pnts" type="text">
       </div>
       
 
 
 
-          <a href="gov-06.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          <button id="testButton" class="govuk-button" data-module="govuk-button">
             Save and continue
-          </a>
+          </button>
 
+        </form>
     </div>
 
    
   </div>
+  <div class="govuk-visually-hidden">
+    <h1 class="govuk-heading-l">
+      A total of <span id="totalGovernors">12</span> board members are recorded
+    </h1>
+    
+    <p class="govuk-body">Board representation:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+        </li>
+        <li>
+            <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+        </li>
+        <li>
+            <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+        </li>
+        <li>
+            <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+        </li>     
+    </ul>
+  </div>
+
+ 
 
 {% endblock %}
