@@ -1,0 +1,78 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+              {% include "./includes/gov_data_tag.html" %}  
+
+        <h1 class="govuk-heading-l">
+        A new total of <span id="totalGovernors">12</span> board members are recorded
+      </h1>
+      
+      <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            If you continue, some data will be cleared and required again to match against the new number of board members.
+          </strong>
+        </div>
+
+      <p class="govuk-body">Board representation:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>
+              <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+          </li>
+          <li>
+              <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+          </li>
+          <li>
+              <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+          </li>
+          <li>
+              <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+          </li>     
+      </ul>
+      <form method="get" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Is this the correct number of board members?
+              </h2>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="test" name="test" type="radio" value="yes~/1-0-0/gov-05">
+                <label class="govuk-label govuk-radios__label" for="test">
+                  Yes, it's the correct number
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="test-2" name="test" type="radio" value="no~/1-0-0/gov-03">
+                <label class="govuk-label govuk-radios__label" for="test-2">
+                  No, I want to make changes
+                </label>
+              </div>
+              
+            </div>
+        
+          </fieldset>
+        </div>
+
+        <button role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+
+   
+  </div>
+
+{% endblock %}
