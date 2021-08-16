@@ -31,3 +31,30 @@ $('#totalGovernors').append(total);
 //*********************** */
 
 
+
+
+
+
+  // Get value on button click and show alert
+  $("#testButton").click(function(){
+    var male = parseInt($('#male').val());
+        female = parseInt($('#female').val());
+        another = parseInt($('#another').val());
+        pnts = parseInt($('#pnts').val());
+    
+
+        
+    
+    var genderTotal = male + female + another + pnts
+
+    // if (genderTotal !== total) {
+    //   alert('error');
+    // } else {
+    //   alert('OK')
+    // }
+
+  });
+  //*********************** */
+
+
+  
