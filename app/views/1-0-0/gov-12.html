@@ -14,12 +14,19 @@
 
     <h1 class="govuk-heading-l">Check your answers</h1>
 
-    <h2 class="govuk-heading-m">Board details <strong class="govuk-tag float-right">
-        Complete
-      </strong></h2>
+    <h2 class="govuk-heading-m">Board details 
+      <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-02.html">
+          Change<span class="govuk-visually-hidden"> Total board members</span>
+        </a>
+    </h2>
     <!-- <p>Total number of board members allowed by your corporation's instrument and articles of association</p>
     <p>{{ data['board-size'] }}</p> -->
 
+      
+          <div class="govuk-heading-s inline-block">Status</div>
+          <strong class="govuk-tag float-right">
+            Complete
+          </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         
@@ -32,38 +39,30 @@
           </dd>
         </div>
         
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
               Edit total board members
             </dt>
             <dd class="govuk-summary-list__actions no-border-bottom">
-              <a class="govuk-link" href="gov-02.html">
-                Change<span class="govuk-visually-hidden"> Total board members</span>
-              </a>
+              
             </dd>
-          </div>
+          </div> -->
       </dl>
 
 
 
 
-    <h2 class="govuk-heading-m">How the board is represented <strong class="govuk-tag float-right">
-        Complete
-      </strong></h2>
-    <!-- <ul class="govuk-list govuk-list--bullet">
-      <li>
-          {{ data['staff-governors'] }} Staff governors
-      </li>
-      <li>
-          {{ data['student-governors'] }} Student governors
-      </li>
-      <li>
-          {{ data['independent-governors'] }} Independent governors
-      </li>
-      <li>
-          {{ data['parent-governors'] }} Parent governor
-      </li>
-    </ul> -->
+    <h2 class="govuk-heading-m">How the board is represented 
+     
+      <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-03.html">
+          Change<span class="govuk-visually-hidden"> Board</span>
+        </a>
+      </h2>
+
+      <div class="govuk-heading-s inline-block">Status</div>
+          <strong class="govuk-tag float-right">
+            Complete
+          </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         
@@ -99,24 +98,30 @@
               {{ data['parent-governors'] }}
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
               Edit board
             </dt>
             <dd class="govuk-summary-list__actions no-border-bottom">
-              <a class="govuk-link" href="gov-05.html">
-                Change<span class="govuk-visually-hidden"> Board</span>
-              </a>
+              
             </dd>
-          </div>
+          </div> -->
       </dl>
 
 
     
-    <h2 class="govuk-heading-m">Gender <strong class="govuk-tag float-right">
-        Complete
-      </strong></h2>
-    
+    <h2 class="govuk-heading-m">Gender 
+      <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-05.html">
+        Change<span class="govuk-visually-hidden"> Gender</span>
+      </a>
+    </h2>
+    <div class="govuk-heading-s inline-block">Status</div>
+    <strong id="genderComplete" class="govuk-tag float-right">
+      Complete
+    </strong>
+    <strong id="genderIncomplete" class="govuk-tag govuk-tag--grey float-right">
+        Incomplete
+      </strong>
    
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         
@@ -152,21 +157,19 @@
             {{ data['pnts'] }}
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
-            Edit gender
-          </dt>
-          <dd class="govuk-summary-list__actions no-border-bottom">
-            <a class="govuk-link" href="gov-05.html">
-              Change<span class="govuk-visually-hidden"> Gender</span>
-            </a>
-          </dd>
-        </div>
+      
     </dl>
 
-    <h2 class="govuk-heading-m">Age ranges <strong class="govuk-tag govuk-tag--grey float-right">
+    <h2 class="govuk-heading-m">Age ranges 
+        <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-06.html">
+            Change<span class="govuk-visually-hidden"> Age ranges</span>
+          </a>
+    </h2>
+
+    <div class="govuk-heading-s inline-block">Status</div>
+    <strong class="govuk-tag govuk-tag--grey float-right">
       Incomplete
-    </strong></h2>
+    </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -174,7 +177,7 @@
           16 to 18
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['16'] }}
         </dd>
         
       </div>
@@ -183,7 +186,16 @@
           19 to 24
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['19'] }}
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          25 to 34
+        </dt>
+        <dd class="govuk-summary-list__value govuk-table__header--numeric">
+          {{ data['25'] }}
         </dd>
         
       </div>
@@ -192,7 +204,7 @@
           35 to 44
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['35'] }}
         </dd>
         
       </div>
@@ -201,7 +213,7 @@
           45 to 54
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['45'] }}
         </dd>
         
       </div>
@@ -210,7 +222,7 @@
           55 to 64
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['55'] }}
         </dd>
         
       </div>
@@ -219,7 +231,7 @@
           65 to 75
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['65'] }}
         </dd>
         
       </div>
@@ -228,7 +240,7 @@
           76 or over
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['76'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -236,27 +248,65 @@
           Prefer not to say
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['age-pnts'] }}
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
-            Edit age ranges
-          </dt>
-          <dd class="govuk-summary-list__actions no-border-bottom">
-            <a class="govuk-link" href="gov-05.html">
-              Change<span class="govuk-visually-hidden"> Age ranges</span>
-            </a>
-          </dd>
-        </div>
         
     </dl>
 
 
-    <h2 class="govuk-heading-m">Ethnicity <strong class="govuk-tag float-right">
+    <h2 class="govuk-heading-m">Disability 
+        <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-07.html">
+          Change<span class="govuk-visually-hidden"> Disability</span>
+        </a>
+      </h2>
+  
+      <div class="govuk-heading-s inline-block">Status</div>
+      <strong class="govuk-tag float-right">
         Complete
-      </strong></h2>
+      </strong>
+  
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+            How many governors consider themselves to have a disability?
+          </dt>
+          <dd class="govuk-summary-list__value  govuk-table__header--numeric">
+              {{ data['disability'] }}
+          </dd>
+         
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+              How many board members do not identify themselves as having a disability?
+          </dt>
+          <dd class="govuk-summary-list__value  govuk-table__header--numeric">
+              {{ data['no-disability'] }}
+          </dd>
+         
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+            How many prefer not to say?
+          </dt>
+          <dd class="govuk-summary-list__value  govuk-table__header--numeric">
+              {{ data['disability-pnts'] }}
+          </dd>
+        </div>
+        
+      </dl>
+
+
+    <h2 class="govuk-heading-m">Ethnicity 
+      <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-08.html">
+          Change<span class="govuk-visually-hidden"> Ethnicity</span>
+        </a>
+    </h2>
     
+    <div class="govuk-heading-s inline-block">Status</div>
+    <strong class="govuk-tag float-right">
+      Complete
+    </strong>
     
     <h3 class="govuk-heading-s">White</h3>
 
@@ -267,7 +317,15 @@
           English / Welsh / Scottish / Northern Irish / British Irish
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
-          3
+          {{ data['ewsnb'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+          Irish
+        </dt>
+        <dd class="govuk-summary-list__value  govuk-table__header--numeric">
+            {{ data['irish'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -275,7 +333,7 @@
           Gypsy or Irish Traveller
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['gypsy'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -283,7 +341,7 @@
           Roma
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['roma'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -291,7 +349,7 @@
           Any other White background
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['other-white'] }}
         </dd>
       </div>
       
@@ -306,7 +364,7 @@
           White and Black Caribbean
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['wbc'] }}
         </dd>
       </div>       
       <div class="govuk-summary-list__row">
@@ -314,7 +372,7 @@
           White and Black African
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['wba'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -322,7 +380,7 @@
           White and Asian
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['wa'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -330,7 +388,7 @@
           Any Other Mixed / multiple ethnic background
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['other-mixed'] }}
         </dd>
       </div>       
     </dl>
@@ -344,7 +402,7 @@
           Indian
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['indian'] }}
         </dd>
       </div>       
       <div class="govuk-summary-list__row">
@@ -352,7 +410,7 @@
           Pakistani
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['pakistani'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -360,7 +418,7 @@
           Bangladeshi
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['bangladeshi'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -368,7 +426,7 @@
           Chinese
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['chinese'] }}
         </dd>
       </div>       
       <div class="govuk-summary-list__row">
@@ -376,7 +434,7 @@
           Any other Asian background
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['other-asian'] }}
         </dd>
       </div>       
     </dl>
@@ -390,7 +448,7 @@
           African
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['african'] }}
         </dd>
       </div>       
       <div class="govuk-summary-list__row">
@@ -398,7 +456,7 @@
           Caribbean
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['caribbean'] }}
         </dd>
       </div>       
       <div class="govuk-summary-list__row">
@@ -406,7 +464,7 @@
           Any other Black / African / Caribbean background
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+          {{ data['other-black'] }}
         </dd>
         
       </div>       
@@ -422,7 +480,7 @@
           Arab
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['arab'] }}
         </dd>
         
       </div>       
@@ -432,7 +490,7 @@
 
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['other-ethnic'] }}
         </dd>
         
       </div>       
@@ -441,62 +499,27 @@
           Prefer not to say
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['ethnicity-pnts'] }}
         </dd>
         
       </div>       
-      <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
-            Edit ethnicity
-          </dt>
-          <dd class="govuk-summary-list__actions no-border-bottom">
-            <a class="govuk-link" href="gov-05.html">
-              Change<span class="govuk-visually-hidden"> Ethnicity</span>
-            </a>
-          </dd>
-        </div>
     </dl>
 
 
-    <h2 class="govuk-heading-m">Disability <strong class="govuk-tag float-right">
-        Complete
-      </strong></h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
-          How many governors consider themselves to have a disability?
-        </dt>
-        <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          2
-        </dd>
-       
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
-          How many prefer not to say?
-        </dt>
-        <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          10
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
-            Edit disability
-          </dt>
-          <dd class="govuk-summary-list__actions no-border-bottom">
-            <a class="govuk-link" href="gov-05.html">
-              Change<span class="govuk-visually-hidden"> Disability</span>
-            </a>
-          </dd>
-        </div>
-    </dl>
+    
 
 
 
-    <h2 class="govuk-heading-m">Time served <strong class="govuk-tag float-right">
-        Complete
-      </strong></h2>
+    <h2 class="govuk-heading-m">Time served 
+      <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-09.html">
+        Change<span class="govuk-visually-hidden"> Time served</span>
+      </a>
+    </h2>
+
+    <div class="govuk-heading-s inline-block">Status</div>
+    <strong class="govuk-tag float-right">
+      Complete
+    </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -504,7 +527,7 @@
             Less than 1 year served
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          2
+          {{ data['ltoy'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -512,7 +535,7 @@
             1 to 4 years served
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          3
+            {{ data['1to4'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -520,7 +543,7 @@
             5 to 8 years served
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          0
+            {{ data['5to8'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -528,7 +551,7 @@
             9 to 12 years served
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          9
+            {{ data['9to12'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -536,25 +559,22 @@
             Over 12 years served
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          0 
+            {{ data['over12'] }} 
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
-            Edit time served
-          </dt>
-          <dd class="govuk-summary-list__actions no-border-bottom">
-            <a class="govuk-link" href="gov-05.html">
-              Change<span class="govuk-visually-hidden"> Time served</span>
-            </a>
-          </dd>
-        </div>
     </dl>
 
 
-    <h2 class="govuk-heading-m">Vacancies <strong class="govuk-tag float-right">
+    <h2 class="govuk-heading-m">Vacancies 
+      <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-10.html">
+          Change<span class="govuk-visually-hidden"> Vacancies</span>
+        </a>
+    </h2>
+
+      <div class="govuk-heading-s inline-block">Status</div>
+      <strong class="govuk-tag float-right">
         Complete
-      </strong></h2>
+      </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -571,7 +591,7 @@
           How many governor vacancies were there over the last academic year?
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          4
+          {{ data['vacancies'] }}
         </dd>
       </div>
       
@@ -580,7 +600,7 @@
           How many were filled?
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          2
+          {{ data['filled'] }}
         </dd>
       </div>
 
@@ -589,7 +609,7 @@
           How many took 6 months or longer to fill
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          2
+          {{ data['6months'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -597,19 +617,9 @@
           How many of the unfil
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-          0
+          {{ data['unfilled'] }}
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-visually-hidden">
-            Edit vacancies
-          </dt>
-          <dd class="govuk-summary-list__actions no-border-bottom">
-            <a class="govuk-link" href="gov-05.html">
-              Change<span class="govuk-visually-hidden"> Vacancies</span>
-            </a>
-          </dd>
-        </div>
     </dl>
 
 
@@ -626,6 +636,40 @@
     </form>
 
   </div>
+</div>
+
+
+<div class="govuk-visually-hidden">
+  <h1 class="govuk-heading-l">
+    A total of <span id="totalGovernors">12</span> board members are recorded
+  </h1>
+  
+  <p class="govuk-body">Board representation:</p>
+  <ul class="govuk-list govuk-list--bullet">
+      <li>
+          <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+      </li>
+      <li>
+          <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+      </li>
+      <li>
+          <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+      </li>
+      <li>
+          <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+      </li>     
+  </ul>
+
+
+  
+      <input class="govuk-input govuk-input--width-5" id="male" name="male" type="text" value="{{ data['male'] }}">
+    
+      <input class="govuk-input govuk-input--width-5" id="female" name="female" type="text" value="{{ data['female'] }}">
+    
+      <input class="govuk-input govuk-input--width-5" id="another" name="another" type="text" value="{{ data['another'] }}">
+    
+      <input class="govuk-input govuk-input--width-5" id="pnts" name="pnts" type="text" value="{{ data['pnts'] }}">
+    
 </div>
 
 {% endblock %}

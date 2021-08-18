@@ -21,45 +21,46 @@
       </h1>
       
       <p class="govuk-body">Enter figures accounting for all board members.</p>
-     
+      <form action="gov-10" method="post" class="form">
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="ltoy">
           Less than 1 year served
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="ltoy" name="ltoy" type="text" value="{{ data['ltoy'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="1to4">
           1 to 4 years served
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="1to4" name="1to4" type="text" value="{{ data['1to4'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="5to8">
           5 to 8 years served
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="5to8" name="5to8" type="text" value="{{ data['5to8'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="9to12">
           9 to 12 years served
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="9to12" name="9to12" type="text" value="{{ data['9to12'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="over12">
           Over 12 years served
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="over12" name="over12" type="text" value="{{ data['over12'] }}">
       </div>
       
-      <a href="gov-10.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+      <button role="button" draggable="false" class="govuk-button" data-module="govuk-button">
         Save and continue
-      </a>
+      </button>
+      </form>
 
     </div>
 

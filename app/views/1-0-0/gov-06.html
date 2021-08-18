@@ -9,6 +9,23 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+        <div id="gov-06-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+              <a href="#passport-issued-day">The total number for gender representation must be the same as the number of board members. Enter age range figures that are equal to <span id="totalGovernors"></span> (the number of board members)</a>
+                </li>
+                <!-- <li>
+                  <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+
               {% include "./includes/gov_data_tag.html" %}  
 
         <h1 class="govuk-heading-l">
@@ -17,81 +34,105 @@
       
       <p class="govuk-body">Enter figures for governors into applicable age ranges.</p>
      
+      <form action="" method="post" class="form">
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="16">
           16 to 18 years
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="16" name="16" type="text" value="{{ data['16'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="19">
           19 to 24 years
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="19" name="19" type="text" value="{{ data['19'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="25">
           25 to 34 years
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="25" name="25" type="text" value="{{ data['25'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="35">
           35 to 44 years
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="35" name="35" type="text" value="{{ data['35'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="45">
           45 to 54 years
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="45" name="45" type="text" value="{{ data['45'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="55">
           55 to 64 years
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="55" name="55" type="text" value="{{ data['55'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="65">
           65 to 75 years
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="65" name="65" type="text" value="{{ data['65'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="76">
           76 years or over
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="76" name="76" type="text" value="{{ data['76'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="age-pnts">
           Prefer not to say
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="age-pnts" name="age-pnts" type="text" value="{{ data['age-pnts'] }}">
       </div>
       
+      <div class="govuk-button-group">
+        <button id="ageRangesButton" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
       
-      
-
-
-
-          <a href="gov-07.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </a>
-
+        <button id="ageRangeButtonExit" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and exit
+        </button>
     </div>
+    </form >
 
-   
+
+  </div>
+</div>
+
+<div class="govuk-visually-hidden">
+    <h1 class="govuk-heading-l">
+      A total of <span id="totalGovernors">12</span> board members are recorded
+    </h1>
+    
+    <p class="govuk-body">Board representation:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+        </li>
+        <li>
+            <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+        </li>
+        <li>
+            <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+        </li>
+        <li>
+            <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+        </li>     
+    </ul>
   </div>
 
 {% endblock %}

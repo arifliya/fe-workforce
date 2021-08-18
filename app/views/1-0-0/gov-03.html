@@ -12,59 +12,89 @@
               {% include "./includes/gov_data_tag.html" %}  
 
         <h1 class="govuk-heading-l">
-        How is the board represented?
+        How is the board currently represented?
       </h1>
       
-        <p>Enter figures, do not include co-opted governors.</p>
+        <p>Enter figures for current board members. Do not include co-opted governors.</p>
+       
 
-      <form action="gov-04" method="post" class="form">
+      <form id="onInputChange" action="gov-04" method="post" class="form">
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="width-5">
+          <label class="govuk-label govuk-label--m" for="staff-governors">
             Staff governors
           </label>
           <div id="account-number-hint" class="govuk-hint">
             Include executive (ex-officio), principal or chief executive and other staff members who are governors
           </div>
-          <input class="govuk-input govuk-input--width-5" id="width-5" name="staff-governors" type="text">
+          <input class="govuk-input govuk-input--width-5" id="staff-governors" name="staff-governors" type="text" value="{{ data['staff-governors'] }}">
         </div>
         
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="width-5">
+          <label class="govuk-label govuk-label--m" for="student-governors">
             Student governors
           </label>
           <div id="account-number-hint" class="govuk-hint">
             Include part-time students if applicable
           </div>
-          <input class="govuk-input govuk-input--width-5" id="width-5" name="student-governors" type="text">
+          <input class="govuk-input govuk-input--width-5" id="student-governors" name="student-governors" type="text" value="{{ data['student-governors'] }}">
         </div>
         
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="width-5">
+          <label class="govuk-label govuk-label--m" for="independent-governors">
             Independent governors
           </label>
           <div id="account-number-hint" class="govuk-hint">
             Not a member of staff, student or parent at the organisation
           </div>
-          <input class="govuk-input govuk-input--width-5" id="width-5" name="independent-governors" type="text">
+          <input class="govuk-input govuk-input--width-5" id="independent-governors" name="independent-governors" type="text" value="{{ data['independent-governors'] }}">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="width-5">
+          <label class="govuk-label govuk-label--m" for="parent-governors">
             Parent governors
           </label>
           <div id="account-number-hint" class="govuk-hint">
             Parent of a learner at the organisation. Not a member of staff or a student at the organisation
           </div>
-          <input class="govuk-input govuk-input--width-5" id="width-5" name="parent-governors" type="text">
+          <input class="govuk-input govuk-input--width-5" id="parent-governors" name="parent-governors" type="text" value="{{ data['parent-governors'] }}">
         </div>
 
-          <button class="govuk-button" data-module="govuk-button">Continue</button>
+          <button id="continueTotal" class="govuk-button" data-module="govuk-button">Continue</button>
 
         </form>
     </div>
 
    
   </div>
+
+  
+
+  <div class="govuk-visually-hidden">
+
+    
+
+      <h1 class="govuk-heading-l">
+        A total of <span id="totalGovernors"></span> board members are recorded
+      </h1>
+      
+      <!-- <span id="newTotalGovernors"></span> -->
+
+      <p class="govuk-body">Board representation:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>
+              <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+          </li>
+          <li>
+              <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+          </li>
+          <li>
+              <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+          </li>
+          <li>
+              <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+          </li>     
+      </ul>
+    </div>
 
 {% endblock %}

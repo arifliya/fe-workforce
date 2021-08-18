@@ -22,40 +22,41 @@
       <p class="govuk-body">Record governor vacancies for academic year 2020 to 2021. </p>
        <p> Include all governor vacancies that were open at the beginning of, or occurred during the academic year.</p>
      
+       <form action="gov-12" method="post" class="form">
+
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="vacancies">
           How many vacancies were there during the academic year?
         </label>
-        
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="vacancies" name="vacancies" type="text" value="{{ data['vacancies'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="filled">
           How many were filled?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="filled" name="filled" type="text" value="{{ data['filled'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="6months">
           How many took 6 months or longer to fill?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="6months" name="6months" type="text" value="{{ data['6months'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="unfilled">
           How many vacancies have been open for 6 months or longer and are still unfilled?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="unfilled" name="unfilled" type="text" value="{{ data['unfilled'] }}">
       </div>
       
-     
-      
-      <a href="gov-12.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+      <button role="button" draggable="false" class="govuk-button" data-module="govuk-button">
         Save and continue
-      </a>
+      </button>
+</form>
+
 
     </div>
 

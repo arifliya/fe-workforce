@@ -21,32 +21,32 @@
       </h1>
       
       <!-- <p class="govuk-body">Enter figures for governors in applicable age ranges. You can use 0 or leave blank for age ranges that are not relevant</p> -->
-     
+      <form action="gov-08" method="post" class="form">
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="disability">
           How many board members consider themselves to have a disability?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="disability" name="disability" type="text" value="{{ data['disability'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="no-disability">
           How many board members do not identify themselves as having a disability?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="no-disability" name="no-disability" type="text" value="{{ data['no-disability'] }}">
       </div>
       
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="width-5">
+        <label class="govuk-label govuk-label--m" for="disability-pnts">
           How many prefer not to say?
         </label>
-        <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-5" id="disability-pnts" name="disability-pnts" type="text" value="{{ data['disability-pnts'] }}">
       </div>
       
-      <a href="gov-08.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+      <button role="button" draggable="false" class="govuk-button" data-module="govuk-button">
         Save and continue
-      </a>
-
+      </button>
+      </form>
     </div>
 
    
