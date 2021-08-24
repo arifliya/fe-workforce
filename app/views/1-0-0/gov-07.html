@@ -7,21 +7,32 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
+      <div id="gov-07-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+            <a href="#passport-issued-day">The total number for disability must be the same as the number of board members. Enter disability figures that are equal to <span id="totalGovernors"></span> (the number of board members)</a>
+              </li>
+              <!-- <li>
+                <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+
+    {% include "./includes/gov_data_tag.html" %}  
+
+    <h1 class="govuk-heading-l">
+      Disability data
+    </h1>
       
-
-    <div class="govuk-grid-column-two-thirds">
-
-      
-            {% include "./includes/gov_data_tag.html" %}  
-
-      <h1 class="govuk-heading-l">
-        Disability data
-      </h1>
-      
-      <!-- <p class="govuk-body">Enter figures for governors in applicable age ranges. You can use 0 or leave blank for age ranges that are not relevant</p> -->
-      <form action="gov-08" method="post" class="form">
+    <form action="gov-08" method="post" class="form">
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--m" for="disability">
           How many board members consider themselves to have a disability?
@@ -43,13 +54,41 @@
         <input class="govuk-input govuk-input--width-5" id="disability-pnts" name="disability-pnts" type="text" value="{{ data['disability-pnts'] }}">
       </div>
       
-      <button role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+
+      <div class="govuk-button-group">
+      <button id="disabilityButton" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
-      </form>
-    </div>
+      
+      <button id="disabilityButtonExit" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save and exit
+      </button>
+      </div>
+    </form>
 
-   
+  </div>
+</div>
+
+<div class="govuk-visually-hidden">
+    <h1 class="govuk-heading-l">
+      A total of <span id="totalGovernors"></span> board members are recorded
+    </h1>
+    
+    <p class="govuk-body">Board representation:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+        </li>
+        <li>
+            <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+        </li>
+        <li>
+            <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+        </li>
+        <li>
+            <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+        </li>     
+    </ul>
   </div>
 
 {% endblock %}

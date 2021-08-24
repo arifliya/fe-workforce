@@ -43,6 +43,7 @@
     "radio-button-redirect": "^1.2.0",
     "require-dir": "^1.0.0",
     "sync-request": "^6.0.0",
+    "tabletop": "^1.6.3",
     "universal-analytics": "^0.4.16",
     "uuid": "^7.0.3"
   },

@@ -120,8 +120,8 @@
       Complete
     </strong>
     <strong id="genderIncomplete" class="govuk-tag govuk-tag--grey float-right">
-        Incomplete
-      </strong>
+      Incomplete
+    </strong>
    
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         
@@ -167,7 +167,10 @@
     </h2>
 
     <div class="govuk-heading-s inline-block">Status</div>
-    <strong class="govuk-tag govuk-tag--grey float-right">
+    <strong id="ageComplete" class="govuk-tag float-right">
+        Complete
+      </strong>
+    <strong id="ageIncomplete" class="govuk-tag govuk-tag--grey float-right">
       Incomplete
     </strong>
 
@@ -262,9 +265,12 @@
       </h2>
   
       <div class="govuk-heading-s inline-block">Status</div>
-      <strong class="govuk-tag float-right">
+      <strong id="disabilityComplete" class="govuk-tag float-right">
         Complete
       </strong>
+      <strong id="disabilityIncomplete" class="govuk-tag govuk-tag--grey float-right">
+          Incomplete
+        </strong>
   
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -304,8 +310,11 @@
     </h2>
     
     <div class="govuk-heading-s inline-block">Status</div>
-    <strong class="govuk-tag float-right">
+    <strong id="ethnicityComplete" class="govuk-tag float-right">
       Complete
+    </strong>
+    <strong id="ethnicityIncomplete" class="govuk-tag govuk-tag--grey float-right">
+      Incomplete
     </strong>
     
     <h3 class="govuk-heading-s">White</h3>
@@ -517,8 +526,11 @@
     </h2>
 
     <div class="govuk-heading-s inline-block">Status</div>
-    <strong class="govuk-tag float-right">
-      Complete
+    <strong id="timeServedComplete" class="govuk-tag float-right">
+        Complete
+      </strong>
+    <strong id="timeServedIncomplete" class="govuk-tag govuk-tag--grey float-right">
+      Incomplete
     </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -582,11 +594,11 @@
               Were there any board member vacancies during academic year?
           </dt>
           <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-            No
+              {{ data['open-vacancies'] }}
           </dd>
       </div>
-
-      <div class="govuk-summary-list__row">
+      
+      <div class="govuk-summary-list__row summaries">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           How many governor vacancies were there over the last academic year?
         </dt>
@@ -595,7 +607,7 @@
         </dd>
       </div>
       
-      <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row summaries">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           How many were filled?
         </dt>
@@ -604,7 +616,7 @@
         </dd>
       </div>
 
-      <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row summaries">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           How many took 6 months or longer to fill
         </dt>
@@ -612,7 +624,7 @@
           {{ data['6months'] }}
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row summaries">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           How many of the unfil
         </dt>
@@ -620,6 +632,7 @@
           {{ data['unfilled'] }}
         </dd>
       </div>
+    
     </dl>
 
 
@@ -641,7 +654,7 @@
 
 <div class="govuk-visually-hidden">
   <h1 class="govuk-heading-l">
-    A total of <span id="totalGovernors">12</span> board members are recorded
+    A total of <span id="totalGovernors"></span> board members are recorded
   </h1>
   
   <p class="govuk-body">Board representation:</p>
@@ -660,16 +673,60 @@
       </li>     
   </ul>
 
+  
+  <input class="govuk-input govuk-input--width-5" id="male" name="male" type="text" value="{{ data['male'] }}">    
+  <input class="govuk-input govuk-input--width-5" id="female" name="female" type="text" value="{{ data['female'] }}">    
+  <input class="govuk-input govuk-input--width-5" id="another" name="another" type="text" value="{{ data['another'] }}">    
+  <input class="govuk-input govuk-input--width-5" id="pnts" name="pnts" type="text" value="{{ data['pnts'] }}">
 
   
-      <input class="govuk-input govuk-input--width-5" id="male" name="male" type="text" value="{{ data['male'] }}">
-    
-      <input class="govuk-input govuk-input--width-5" id="female" name="female" type="text" value="{{ data['female'] }}">
-    
-      <input class="govuk-input govuk-input--width-5" id="another" name="another" type="text" value="{{ data['another'] }}">
-    
-      <input class="govuk-input govuk-input--width-5" id="pnts" name="pnts" type="text" value="{{ data['pnts'] }}">
-    
+
+  <input class="govuk-input govuk-input--width-5" id="disability" name="disability" type="text" value="{{ data['disability'] }}">
+  <input class="govuk-input govuk-input--width-5" id="no-disability" name="no-disability" type="text" value="{{ data['no-disability'] }}">
+  <input class="govuk-input govuk-input--width-5" id="disability-pnts" name="disability-pnts" type="text" value="{{ data['disability-pnts'] }}">
+
+
+  <input class="govuk-input govuk-input--width-5" id="16" name="16" type="text" value="{{ data['16'] }}">
+  <input class="govuk-input govuk-input--width-5" id="19" name="19" type="text" value="{{ data['19'] }}">
+  <input class="govuk-input govuk-input--width-5" id="25" name="25" type="text" value="{{ data['25'] }}">
+  <input class="govuk-input govuk-input--width-5" id="35" name="35" type="text" value="{{ data['35'] }}">
+  <input class="govuk-input govuk-input--width-5" id="45" name="45" type="text" value="{{ data['45'] }}">
+  <input class="govuk-input govuk-input--width-5" id="55" name="55" type="text" value="{{ data['55'] }}">
+  <input class="govuk-input govuk-input--width-5" id="65" name="65" type="text" value="{{ data['65'] }}">
+  <input class="govuk-input govuk-input--width-5" id="76" name="76" type="text" value="{{ data['76'] }}">
+  <input class="govuk-input govuk-input--width-5" id="age-pnts" name="age-pnts" type="text" value="{{ data['age-pnts'] }}">
+
+
+
+  <input class="govuk-input govuk-input--width-5" id="ewsnb" name="ewsnb" type="text" value="{{ data['ewsnb'] }}">
+  <input class="govuk-input govuk-input--width-5" id="irish" name="irish" type="text" value="{{ data['irish'] }}">
+  <input class="govuk-input govuk-input--width-5" id="gypsy" name="gypsy" type="text" value="{{ data['gypsy'] }}">
+  <input class="govuk-input govuk-input--width-5" id="roma" name="roma" type="text" value="{{ data['roma'] }}">
+  <input class="govuk-input govuk-input--width-5" id="other-white" name="other-white" type="text" value="{{ data['other-white'] }}">
+  <input class="govuk-input govuk-input--width-5" id="wbc" name="wbc" type="text" value="{{ data['wbc'] }}">
+  <input class="govuk-input govuk-input--width-5" id="wba" name="wba" type="text" value="{{ data['wba'] }}">
+  <input class="govuk-input govuk-input--width-5" id="wa" name="wa" type="text" value="{{ data['wa'] }}">
+  <input class="govuk-input govuk-input--width-5" id="other-mixed" name="other-mixed" type="text" value="{{ data['other-mixed'] }}">
+  <input class="govuk-input govuk-input--width-5" id="indian" name="indian" type="text" value="{{ data['indian'] }}">
+  <input class="govuk-input govuk-input--width-5" id="pakistani" name="pakistani" type="text" value="{{ data['pakistani'] }}">
+  <input class="govuk-input govuk-input--width-5" id="bangladeshi" name="bangladeshi" type="text" value="{{ data['bangladeshi'] }}">
+  <input class="govuk-input govuk-input--width-5" id="chinese" name="chinese" type="text" value="{{ data['chinese'] }}">
+  <input class="govuk-input govuk-input--width-5" id="other-asian" name="other-asian" type="text" value="{{ data['other-asian'] }}">
+  <input class="govuk-input govuk-input--width-5" id="african" name="african" type="text" value="{{ data['african'] }}">
+  <input class="govuk-input govuk-input--width-5" id="caribbean" name="caribbean" type="text" value="{{ data['caribbean'] }}">
+  <input class="govuk-input govuk-input--width-5" id="other-black" name="other-black" type="text" value="{{ data['other-black'] }}">
+  <input class="govuk-input govuk-input--width-5" id="arab" name="arab" type="text" value="{{ data['arab'] }}">
+  <input class="govuk-input govuk-input--width-5" id="other-ethnic" name="other-ethnic" type="text" value="{{ data['other-ethnic'] }}">
+  <input class="govuk-input govuk-input--width-5" id="ethnicity-pnts" name="ethnicity-pnts" type="text" value="{{ data['ethnicity-pnts'] }}">
+
+  <input class="govuk-input govuk-input--width-5" id="ltoy" name="ltoy" type="text" value="{{ data['ltoy'] }}">
+<input class="govuk-input govuk-input--width-5" id="1to4" name="1to4" type="text" value="{{ data['1to4'] }}">
+<input class="govuk-input govuk-input--width-5" id="5to8" name="5to8" type="text" value="{{ data['5to8'] }}">
+<input class="govuk-input govuk-input--width-5" id="9to12" name="9to12" type="text" value="{{ data['9to12'] }}">
+<input class="govuk-input govuk-input--width-5" id="over12" name="over12" type="text" value="{{ data['over12'] }}">
+
+<div id="journey">{{ data['open-vacancies'] }}</div>
+
 </div>
 
 {% endblock %}
