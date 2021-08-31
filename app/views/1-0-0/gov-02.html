@@ -18,13 +18,13 @@
       <form action="gov-03" method="post" class="form">
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="width-5">
+          <label class="govuk-label govuk-label--m" for="board-size">
             Record the specified board size
           </label>
-          <input class="govuk-input govuk-input--width-5" id="width-5" name="board-size" type="text">
+          <input class="govuk-input govuk-input--width-5" id="board-size" name="board-size" type="text" value="{{ data['board-size'] }}">
         </div>
    
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <button id="boardSizeButton" class="govuk-button" data-module="govuk-button">Save and continue</button>
     
       </form>
 

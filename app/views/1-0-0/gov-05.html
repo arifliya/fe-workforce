@@ -17,11 +17,11 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#passport-issued-day">The total number for gender representation must be the same as the number of board members. Enter gender figures that are equal to <span id="totalGovernors"></span> (the number of board members)</a>
+              <a id="errorMessageTotal" href="#">The total number for gender representation must be the same as the number of board members. Enter gender figures that are equal to <span id="totalGovernors"></span> (the number of board members)</a>
             </li>
-            <!-- <li>
-              <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
-            </li> -->
+            <li>
+              <a id="errorMessageNumber" href="#">Enter a numeric value</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -39,6 +39,9 @@
         <label class="govuk-label govuk-label--m" for="male">
           Male board members
         </label>
+        <span class="govuk-error-message hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+        </span>
         <input class="govuk-input govuk-input--width-5" id="male" name="male" type="text" value="{{ data['male'] }}">
       </div>
       
@@ -46,6 +49,9 @@
         <label class="govuk-label govuk-label--m" for="female">
           Female board members
         </label>
+        <span class="govuk-error-message hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+        </span>
         <input class="govuk-input govuk-input--width-5" id="female" name="female" type="text" value="{{ data['female'] }}">
       </div>
       
@@ -53,6 +59,9 @@
         <label class="govuk-label govuk-label--m" for="another">
           How many identify in another way?
         </label>
+        <span class="govuk-error-message hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+        </span>
         <input class="govuk-input govuk-input--width-5" id="another" name="another" type="text" value="{{ data['another'] }}">
       </div>
 
@@ -60,6 +69,9 @@
         <label class="govuk-label govuk-label--m" for="pnts">
           How many prefer not to say?
         </label>
+        <span class="govuk-error-message hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+        </span>
         <input class="govuk-input govuk-input--width-5" id="pnts" name="pnts" type="text" value="{{ data['pnts'] }}">
       </div>
       

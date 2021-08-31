@@ -24,8 +24,11 @@
 
       
           <div class="govuk-heading-s inline-block">Status</div>
-          <strong class="govuk-tag float-right">
+          <strong id="boardSizeComplete" class="govuk-tag float-right">
             Complete
+          </strong>
+          <strong id="boardSizeIncomplete" class="govuk-tag govuk-tag--grey float-right">
+            Incomplete
           </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -35,7 +38,7 @@
               Total number of board members allowed by your corporation's instrument and articles of association
           </dt>
           <dd class="govuk-summary-list__value govuk-table__header--numeric">
-              {{ data['board-size'] }}
+              <div id="boardSize">{{ data['board-size'] }}</div>
           </dd>
         </div>
         
@@ -60,8 +63,11 @@
       </h2>
 
       <div class="govuk-heading-s inline-block">Status</div>
-          <strong class="govuk-tag float-right">
+          <strong id="boardRepComplete" class="govuk-tag float-right">
             Complete
+          </strong>
+          <strong id="boardRepIncomplete" class="govuk-tag govuk-tag--grey float-right">
+            Incomplete
           </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -109,7 +115,7 @@
       </dl>
 
 
-    
+  <div id="genderGroup">  
     <h2 class="govuk-heading-m">Gender 
       <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-05.html">
         Change<span class="govuk-visually-hidden"> Gender</span>
@@ -159,7 +165,10 @@
       </div>
       
     </dl>
+  </div>
 
+
+  <div id="ageRangesGroup">  
     <h2 class="govuk-heading-m">Age ranges 
         <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-06.html">
             Change<span class="govuk-visually-hidden"> Age ranges</span>
@@ -231,7 +240,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
-          65 to 75
+          65 to 74
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
           {{ data['65'] }}
@@ -240,7 +249,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
-          76 or over
+          75 or over
         </dt>
         <dd class="govuk-summary-list__value govuk-table__header--numeric">
           {{ data['76'] }}
@@ -256,8 +265,9 @@
       </div>
         
     </dl>
+  </div>
 
-
+  <div id="disabilityGroup">
     <h2 class="govuk-heading-m">Disability 
         <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-07.html">
           Change<span class="govuk-visually-hidden"> Disability</span>
@@ -301,8 +311,9 @@
         </div>
         
       </dl>
+    </div>
 
-
+    <div id="ethnicityGroup">
     <h2 class="govuk-heading-m">Ethnicity 
       <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-08.html">
           Change<span class="govuk-visually-hidden"> Ethnicity</span>
@@ -513,12 +524,12 @@
         
       </div>       
     </dl>
-
+  </div>
 
     
 
 
-
+<div id="timeServedGroup">
     <h2 class="govuk-heading-m">Time served 
       <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-09.html">
         Change<span class="govuk-visually-hidden"> Time served</span>
@@ -575,8 +586,10 @@
         </dd>
       </div>
     </dl>
+  </div>
 
 
+<div id="vacanciesGroup">
     <h2 class="govuk-heading-m">Vacancies 
       <a class="govuk-link govuk-link--no-visited-state govuk-heading-s float-right" href="gov-10.html">
           Change<span class="govuk-visually-hidden"> Vacancies</span>
@@ -584,8 +597,11 @@
     </h2>
 
       <div class="govuk-heading-s inline-block">Status</div>
-      <strong class="govuk-tag float-right">
-        Complete
+      <strong id="vacancyComplete" class="govuk-tag float-right">
+          Complete
+        </strong>
+      <strong id="vacancyIncomplete" class="govuk-tag govuk-tag--grey float-right">
+        Incomplete
       </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -594,11 +610,11 @@
               Were there any board member vacancies during academic year?
           </dt>
           <dd class="govuk-summary-list__value  govuk-table__header--numeric">
-              {{ data['open-vacancies'] }}
+              <div id="open-vacancies">{{ data['open-vacancies'] }}</div>
           </dd>
       </div>
       
-      <div class="govuk-summary-list__row summaries">
+      <div class="govuk-summary-list__row summaries hide">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           How many governor vacancies were there over the last academic year?
         </dt>
@@ -607,7 +623,7 @@
         </dd>
       </div>
       
-      <div class="govuk-summary-list__row summaries">
+      <div class="govuk-summary-list__row summaries hide">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           How many were filled?
         </dt>
@@ -616,7 +632,7 @@
         </dd>
       </div>
 
-      <div class="govuk-summary-list__row summaries">
+      <div class="govuk-summary-list__row summaries hide">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
           How many took 6 months or longer to fill
         </dt>
@@ -624,9 +640,9 @@
           {{ data['6months'] }}
         </dd>
       </div>
-      <div class="govuk-summary-list__row summaries">
+      <div class="govuk-summary-list__row summaries hide">
         <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
-          How many of the unfil
+            How many vacancies have been open for 6 months or longer and are still unfilled?
         </dt>
         <dd class="govuk-summary-list__value  govuk-table__header--numeric">
           {{ data['unfilled'] }}
@@ -634,7 +650,7 @@
       </div>
     
     </dl>
-
+  </div>
 
     <div class="govuk-button-group">
       <a href="gov-13.html" class="govuk-button" data-module="govuk-button">
@@ -673,6 +689,7 @@
       </li>     
   </ul>
 
+  <input class="govuk-input govuk-input--width-5" id="board-size" name="board-size" type="text" value="{{ data['board-size'] }}">
   
   <input class="govuk-input govuk-input--width-5" id="male" name="male" type="text" value="{{ data['male'] }}">    
   <input class="govuk-input govuk-input--width-5" id="female" name="female" type="text" value="{{ data['female'] }}">    
@@ -725,7 +742,7 @@
 <input class="govuk-input govuk-input--width-5" id="9to12" name="9to12" type="text" value="{{ data['9to12'] }}">
 <input class="govuk-input govuk-input--width-5" id="over12" name="over12" type="text" value="{{ data['over12'] }}">
 
-<div id="journey">{{ data['open-vacancies'] }}</div>
+<div id="open-vacancies">{{ data['open-vacancies'] }}</div>
 
 </div>
 

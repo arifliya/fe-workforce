@@ -13,10 +13,24 @@
         FE Workforce prototype
         <span class="govuk-caption-xl">Prototype kit {{releaseVersion}}</span>
       </h1>{{releaseVersion | log }}
-      
+      <!-- <form method="get" action="/1-0-0/start" class="form">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="journeys">
+              Journey set to:
+          </label>
+          <select class="govuk-select" id="journeys" name="journeys">
+            <option value="new-user" selected>New User</option>
+            <option value="returning-user" >Returning user</option>
+          </select>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+            Start now
+          </button>
+      </form> -->
       <table class="govuk-table">
         <caption class="govuk-table__caption visually-hidden">List of versions</caption>
-        <!-- <caption class="govuk-table__caption visually-hidden">Journey set to: <span id="journey"></span> </caption> -->
+        
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col">Version</th>

@@ -25,6 +25,22 @@ $govuk-assets-path: '/govuk/assets/';
     float: right;
 }
 
+#gov-03-error.hidden {
+    display: none;
+}
+
+#gov04CheckRadio.hidden {
+    display: none;
+}
+
+#gov-04-error-for-input.hidden {
+    display: none;
+}
+
+#dataClearWarning.hidden {
+    display: none;
+}
+
 #gov-05-error.hidden {
     display: none;
 }
@@ -50,5 +66,9 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .summaries.hide {
+    display: none;
+}
+
+.govuk-error-message.hidden {
     display: none;
 }

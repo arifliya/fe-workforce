@@ -19,6 +19,34 @@ $('#backLink').click(function (event) {
 //********************** */
 
 
+// Adding numbers on gov-03.html
+
+$('#continueTotal').click(function(e){
+  $(".form input[type=text]").each(function () {  
+    
+    if(isNaN(this.value)) {
+      $('#gov-03-error').removeClass('hidden');
+      $('#errorMessageNumber').show();
+      $(this).addClass('govuk-input--error');
+      var ids = $(this).attr('id');
+      $('#errorMessageNumber').attr("href", '#' + ids);
+      $(this).parent().addClass('govuk-form-group--error')
+      $(this).prev('span.govuk-error-message').removeClass('hidden');
+      window.scrollTo(0, 0);
+      e.preventDefault()
+    } else {
+      $(this).removeClass('govuk-input--error');
+      $(this).parent().removeClass('govuk-form-group--error')
+      $(this).prev('span.govuk-error-message').addClass('hidden');
+      $('.form').attr('action', "gov-04")
+
+    }   
+  });
+  
+});
+
+//********************** */
+
 // Adding numbers on gov-04.html
 
 var numberOne = parseInt($('#staffGovernors').html());
@@ -39,9 +67,7 @@ $('.form input[type="text"]').blur(function(){
   if(!$(this).val()){
       $(this).val("0");
   } 
-  // else{
-  //     $(this).removeClass("error");
-  // }
+  
 });
 //*********************** */
 
@@ -54,7 +80,27 @@ $('.govuk-button').click(function(){
     }
   });
 });
-//*********************** */
+//************************/
+
+
+// Show an error if none of the radio buttons are checked after clicking CTA for gov-04 page
+
+$('#gov04Button').click(function() {
+  if (!$("input[name='correct-number']:checked").val()) {
+    $('#gov04CheckRadio').removeClass('hidden');
+    $('.govuk-form-group').addClass('govuk-form-group--error');
+    $('#gov-04-error-for-input').removeClass('hidden');
+    window.scrollTo(0, 0);
+    return false;
+  }
+});
+
+$('.govuk-radios').change(function(){
+  $('#gov04CheckRadio').addClass('hidden');
+    $('.govuk-form-group').removeClass('govuk-form-group--error');
+    $('#gov-04-error-for-input').addClass('hidden');
+});
+//************************/
 
 
 // Check the value on button click and proceed to the next page for gov-05 page
@@ -66,6 +112,9 @@ var male = parseInt($('#male').val());
 var genderTotal = male + female + another + pnts
 
 $("#genderCompButton").click(function(){
+
+  // $(".form input[type=text]").removeClass('govuk-input--error')
+
   var male = parseInt($('#male').val());
       female = parseInt($('#female').val());
       another = parseInt($('#another').val());
@@ -75,7 +124,32 @@ $("#genderCompButton").click(function(){
 
   if (genderTotal !== total) {
     $('#gov-05-error').removeClass('hidden');
+    $('#errorMessageTotal').show();
+    $('#errorMessageNumber').hide();
+
+    // $('.govuk-error-message').addClass('hidden');
+    // $('.govuk-form-group').removeClass('govuk-form-group--error')
+    // $('.govuk-input').removeClass('govuk-input--error')
     window.scrollTo(0, 0);
+    
+    $(".form input[type=text]").each(function () {  
+      if(isNaN(this.value)) {
+        $('#gov-05-error').removeClass('hidden');
+        $('#errorMessageTotal').hide();
+        $('#errorMessageNumber').show();
+        $(this).addClass('govuk-input--error');
+        var ids = $(this).attr('id');
+        $('#errorMessageNumber').attr("href", '#' + ids);
+        $(this).parent().addClass('govuk-form-group--error')
+        $(this).prev('span.govuk-error-message').removeClass('hidden');
+        window.scrollTo(0, 0);
+      } else {
+        $(this).removeClass('govuk-input--error');
+        $(this).parent().removeClass('govuk-form-group--error')
+        $(this).prev('span.govuk-error-message').addClass('hidden');
+      }
+    });
+
     return false;
     
   } else {
@@ -83,6 +157,8 @@ $("#genderCompButton").click(function(){
   }
 
 });
+
+
 
 $("#genderCompButtonExit").click(function(){ 
   $('.form').attr('action', "gov-12").submit();
@@ -99,6 +175,9 @@ if (genderTotal == total) {
 }
 //*********************** */
 
+
+
+
 // Check the value on button click and proceed to the next page or not for gov-06 page
 var sixteen = parseInt($('#16').val());
       nineteen = parseInt($('#19').val());
@@ -114,6 +193,7 @@ var sixteen = parseInt($('#16').val());
   var ageTotal = sixteen + nineteen + twentyfive + thirtyfive + fortyfive + fiftyfive + sixtyfive + seventysix +agePnts
 
 $("#ageRangesButton").click(function(){
+
   var sixteen = parseInt($('#16').val());
       nineteen = parseInt($('#19').val());
       twentyfive = parseInt($('#25').val());
@@ -278,7 +358,7 @@ if (ethnicTotal == total) {
 
 
 
-// Check the value on button click and proceed to the next page for gov-07 page
+// Check the value on button click and proceed to the next page for gov-09 page
 var ltoy = parseInt($('#ltoy').val());
     oneToFour = parseInt($('#1to4').val());
     fiveToEight = parseInt($('#5to8').val());
@@ -335,24 +415,91 @@ if (timeServedTotal == total) {
 
     $('#totalGovernors').text(tot);
 
-    if ($('#totalGovernors') !== (total)) {
-      $('.form').attr('action', "gov-04b");
-    }
+    // if ($('#totalGovernors') !== (total)) {
+    //   $('.form').attr('action', "gov-04b");
+    // }
 
   });
+//**************************** */
 
+
+
+// if staff governors value on gov-12 is blank show incomplete tag otherwise show complete
+var staffGov = $('#staffGovernors').html()
+  
+    if (staffGov == ('')) {
+      $('#boardRepComplete').hide();
+      $('#boardRepIncomplete').show();
+    }
+    
+    if (staffGov !== ('')) {
+      $('#boardRepComplete').show();
+      $('#boardRepIncomplete').hide();
+    }
+
+
+    
 
 //*********************** */
 
 
-var journey = $('#journey').html();
 
-if (journey == 'no') {
+// Check the value on button click and proceed to the next page for gov-10 page
+
+var openVacancies = $('#open-vacancies').html();
+
+if (openVacancies == 'no') {
   // $("form :input").each(function() {
   //   $(this).val('');
   // });
-
+ 
   $('.summaries').addClass('hide');
 } else {
   $('.summaries').removeClass('hide');
 }
+
+if (openVacancies == '') {
+  $('.summaries').addClass('hide');
+  $('#vacancyComplete').hide();
+  $('#vacancyIncomplete').show();
+} 
+
+if (openVacancies !== '') {
+  $('#vacancyComplete').show();
+  $('#vacancyIncomplete').hide();
+} 
+
+$("#vacancyButtonExit").click(function(){ 
+  $('.form').attr('action', "gov-12").submit();
+});
+
+//****************** */
+
+
+// If the board size on gov-12 is blank then show the incomplete tag otherwise show the complete tag
+var boardSize = $('#boardSize').html();
+
+if (boardSize == '') {
+
+  $('#boardSizeComplete').hide();
+  $('#boardSizeIncomplete').show();
+} 
+
+if (boardSize !== '') {
+  $('#boardSizeComplete').show();
+  $('#boardSizeIncomplete').hide();
+} 
+
+//********** */
+
+if ($('#boardRepIncomplete').is(':visible')) {
+  // alert('is visible')
+  $('#genderGroup').hide()
+  $('#ageRangesGroup').hide()
+  $('#disabilityGroup').hide()
+  $('#ethnicityGroup').hide()
+  $('#timeServedGroup').hide()
+  $('#vacanciesGroup').hide()
+}
+
+
