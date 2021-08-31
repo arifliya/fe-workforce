@@ -28,7 +28,7 @@
             Complete
           </strong>
           <strong id="boardSizeIncomplete" class="govuk-tag govuk-tag--grey float-right">
-            Incomplete
+            Not started
           </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -67,7 +67,7 @@
             Complete
           </strong>
           <strong id="boardRepIncomplete" class="govuk-tag govuk-tag--grey float-right">
-            Incomplete
+              Not started
           </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -126,7 +126,7 @@
       Complete
     </strong>
     <strong id="genderIncomplete" class="govuk-tag govuk-tag--grey float-right">
-      Incomplete
+     Not started
     </strong>
    
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -180,7 +180,7 @@
         Complete
       </strong>
     <strong id="ageIncomplete" class="govuk-tag govuk-tag--grey float-right">
-      Incomplete
+     Not started
     </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -279,7 +279,7 @@
         Complete
       </strong>
       <strong id="disabilityIncomplete" class="govuk-tag govuk-tag--grey float-right">
-          Incomplete
+         Not started
         </strong>
   
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -325,7 +325,7 @@
       Complete
     </strong>
     <strong id="ethnicityIncomplete" class="govuk-tag govuk-tag--grey float-right">
-      Incomplete
+     Not started
     </strong>
     
     <h3 class="govuk-heading-s">White</h3>
@@ -541,7 +541,7 @@
         Complete
       </strong>
     <strong id="timeServedIncomplete" class="govuk-tag govuk-tag--grey float-right">
-      Incomplete
+     Not started
     </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -601,7 +601,10 @@
           Complete
         </strong>
       <strong id="vacancyIncomplete" class="govuk-tag govuk-tag--grey float-right">
-        Incomplete
+       Not started
+      </strong>
+      <strong id="vacancyInProgress" class="govuk-tag govuk-tag--grey float-right">
+       In progress
       </strong>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -744,6 +747,12 @@
 
 <div id="open-vacancies">{{ data['open-vacancies'] }}</div>
 
+<div id="vacancyValues">
+  <input class="govuk-input govuk-input--width-5" id="vacancies" name="vacancies" type="text" value="{{ data['vacancies'] }}">
+  <input class="govuk-input govuk-input--width-5" id="filled" name="filled" type="text" value="{{ data['filled'] }}">
+  <input class="govuk-input govuk-input--width-5" id="6months" name="6months" type="text" value="{{ data['6months'] }}">
+  <input class="govuk-input govuk-input--width-5" id="unfilled" name="unfilled" type="text" value="{{ data['unfilled'] }}">
+</div>
 </div>
 
 {% endblock %}

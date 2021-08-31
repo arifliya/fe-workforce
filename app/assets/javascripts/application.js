@@ -447,6 +447,7 @@ var staffGov = $('#staffGovernors').html()
 // Check the value on button click and proceed to the next page for gov-10 page
 
 var openVacancies = $('#open-vacancies').html();
+var vacancyValue = $('#vacancyValues input').val();
 
 if (openVacancies == 'no') {
   // $("form :input").each(function() {
@@ -461,11 +462,19 @@ if (openVacancies == 'no') {
 if (openVacancies == '') {
   $('.summaries').addClass('hide');
   $('#vacancyComplete').hide();
+  $('#vacancyInProgress').hide();
   $('#vacancyIncomplete').show();
 } 
 
 if (openVacancies !== '') {
   $('#vacancyComplete').show();
+  $('#vacancyInProgress').hide();
+  $('#vacancyIncomplete').hide();
+} 
+
+if (openVacancies == 'yes' && vacancyValue == '' ) {
+  $('#vacancyComplete').hide();
+  $('#vacancyInProgress').show();
   $('#vacancyIncomplete').hide();
 } 
 
