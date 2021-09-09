@@ -10,14 +10,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-      <div id="gov-07-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <div id="gov-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
           <h2 class="govuk-error-summary__title" id="error-summary-title">
             There is a problem
           </h2>
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-            <a href="#passport-issued-day">The total number for all disabilities must be the same as the number of board members. Enter disability numbers that are equal to <span id="totalGovernors"></span> (the number of board members)</a>
+            <a href="#passport-issued-day">The total numbers entered must be the same as the number of board members. Enter numbers that are equal to <span class="totalGovernors"></span>.</a>
               </li>
               <!-- <li>
                 <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
@@ -60,9 +60,9 @@
         Save and continue
       </button>
       
-      <button id="disabilityButtonExit" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <!-- <button id="disabilityButtonExit" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Save and exit
-      </button>
+      </button> -->
       </div>
     </form>
 
@@ -71,7 +71,7 @@
 
 <div class="govuk-visually-hidden">
     <h1 class="govuk-heading-l">
-      A total of <span id="totalGovernors"></span> board members are recorded
+      A total of <span class="totalGovernors"></span> board members are recorded
     </h1>
     
     <p class="govuk-body">Board representation:</p>

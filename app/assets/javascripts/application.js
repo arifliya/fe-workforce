@@ -18,6 +18,325 @@ $('#backLink').click(function (event) {
 });
 //********************** */
 
+// journey path 
+
+var journeyPath = $('#journeyPath').html();
+
+
+if (journeyPath == 'new') {
+  $('#startButton').attr('href', 'gov-02');
+}
+
+if (journeyPath == 'returning') {
+  $('#startButton').attr('href', 'dashboard');
+
+  //************** gov-02 ***************** */
+  
+  if ($('#boardSize').html() == '') {
+    // this is for gov-02  
+    $('#boardSize').html('12');
+    $('#board-size').val('12');
+  }
+
+
+  //************** gov-03 ***************** */
+  
+  if ($('#staffGovernors').html() == '') {
+    // this is for gov-03  
+    $('#staffGovernors').html('1');
+    $('#staff-governors').val('1');
+  }
+
+  if ($('#studentGovernors').html() == '') {
+    // this is for gov-03  
+    $('#studentGovernors').html('2');
+    $('#student-governors').val('2');
+  }
+
+  if ($('#independantGovernors').html() == '') {
+    // this is for gov-03  
+    $('#independantGovernors').html('3');
+    $('#independent-governors').val('3');
+  }
+  
+  if ($('#parentGovernors').html() == '') {
+    // this is for gov-03  
+    $('#parentGovernors').html('4');
+    $('#parent-governors').val('4');
+  }
+
+
+  //************** gov-04 ***************** */
+  var numberOne = parseInt($('#staffGovernors').html());
+    var numberTwo = parseInt($('#studentGovernors').html());
+    var numberThree = parseInt($('#independantGovernors').html());
+    var numberFour = parseInt($('#parentGovernors').html());
+
+    var total = numberOne + numberTwo + numberThree + numberFour
+
+
+  if (total == '10') {
+    // $('.govuk-warning-text').addClass('hidden');
+  } else {
+    $('.govuk-warning-text').removeClass('hidden');
+    $('.new-text').removeClass('hidden');
+  }
+  
+  
+  //************** gov-05 ***************** */
+  
+  if ($('#male').val() == '' && total == '10') {
+    // this is for gov-05 
+    $('#maleHtml').html('3');
+    $('#male').val('3');
+  }
+
+  if ($('#female').val() == '' && total == '10') {
+    // this is for gov-05 
+    $('#femaleHtml').html('2');
+    $('#female').val('2');
+  }
+
+  if ($('#another').val() == '' && total == '10') {
+    // this is for gov-05 
+    $('#anotherHtml').html('3');
+    $('#another').val('3');
+  }
+
+  if ($('#pnts').val() == '' && total == '10') {
+    // this is for gov-05 
+    $('#pntsHtml').html('2');
+    $('#pnts').val('2');
+  }
+
+
+  //************** gov-06 ***************** */
+
+  if ($('#16').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#16Html').html('1');
+    $('#16').val('1');
+  }
+  
+  if ($('#19').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#19Html').html('0');
+    $('#19').val('0');
+  }
+  
+  if ($('#25').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#25Html').html('3');
+    $('#25').val('3');
+  }
+  
+  if ($('#35').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#35Html').html('2');
+    $('#35').val('2');
+  }
+  
+  if ($('#45').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#45Html').html('1');
+    $('#45').val('1');
+  }
+  
+  if ($('#55').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#55Html').html('3');
+    $('#55').val('3');
+  }
+  
+  if ($('#65').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#65Html').html('0');
+    $('#65').val('0');
+  }
+  
+  if ($('#76').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#76Html').html('0');
+    $('#76').val('0');
+  }
+  
+  if ($('#age-pnts').val() == '' && total == '10') {
+    // this is for gov-06 
+    $('#agePntsHtml').html('0');
+    $('#age-pnts').val('0');
+  }
+
+
+  //************** gov-07 ***************** */
+
+  if ($('#disability').val() == '' && total == '10') {
+    // this is for gov-07 
+    $('#disabilityHtml').html('1');
+    $('#disability').val('1');
+  }
+  
+  if ($('#no-disability').val() == '' && total == '10') {
+    // this is for gov-07 
+    $('#noDisabilityHtml').html('7');
+    $('#no-disability').val('7');
+  }
+  
+  if ($('#disability-pnts').val() == '' && total == '10') {
+    // this is for gov-07 
+    $('#disabilityPntsHtml').html('2');
+    $('#disability-pnts').val('2');
+  }
+
+
+  //************** gov-08 ***************** */
+
+  if ($('#ewsnb').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#ewsnbHtml').html('2');
+    $('#ewsnb').val('2');
+  }
+  
+  if ($('#irish').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#irishHtml').html('1');
+    $('#irish').val('1');
+  }
+  
+  if ($('#gypsy').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#gypsyHtml').html('0');
+    $('#gypsy').val('0');
+  }
+  
+  if ($('#roma').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#romaHtml').html('0');
+    $('#roma').val('0');
+  }
+  
+  if ($('#other-white').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#otherWhiteHtml').html('0');
+    $('#other-white').val('0');
+  }
+  
+  
+  if ($('#wbc').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#wbcHtml').html('0');
+    $('#wbc').val('0');
+  }
+  if ($('#wba').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#wbaHtml').html('2');
+    $('#wba').val('2');
+  }
+  if ($('#wa').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#waHtml').html('0');
+    $('#wa').val('0');
+  }
+  if ($('#other-mixed').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#otherMixedHtml').html('1');
+    $('#other-mixed').val('1');
+  }
+  
+  if ($('#indian').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#indianHtml').html('2');
+    $('#indian').val('2');
+  }
+  if ($('#pakistani').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#pakistaniHtml').html('1');
+    $('#pakistani').val('1');
+  }
+  if ($('#bangladeshi').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#bangladeshiHtml').html('0');
+    $('#bangladeshi').val('0');
+  }
+  if ($('#chinese').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#chineseHtml').html('0');
+    $('#chinese').val('0');
+  }
+  if ($('#other-asian').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#otherAsianHtml').html('0');
+    $('#other-asian').val('0');
+  }
+  
+  if ($('#african').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#africanHtml').html('1');
+    $('#african').val('1');
+  }
+  if ($('#caribbean').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#caribbeanHtml').html('0');
+    $('#caribbean').val('0');
+  }
+  if ($('#other-black').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#otherBlackHtml').html('0');
+    $('#other-black').val('0');
+  }
+  
+  if ($('#arab').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#arabHtml').html('0');
+    $('#arab').val('0');
+  }
+  if ($('#other-ethnic').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#otherEthnicHtml').html('0');
+    $('#other-ethnic').val('0');
+  }
+  
+  if ($('#ethnicity-pnts').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#ethnicityPntsHtml').html('0');
+    $('#ethnicity-pnts').val('0');
+  }
+  
+  
+  if ($('#ltoy').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#ltoyHtml').html('0');
+    $('#ltoy').val('0');
+  }
+  if ($('#1to4').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#1to4Html').html('4');
+    $('#1to4').val('4');
+  }
+  if ($('#5to8').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#5to8Html').html('3');
+    $('#5to8').val('3');
+  }
+  if ($('#9to12').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#9to12Html').html('2');
+    $('#9to12').val('2');
+  }
+  if ($('#over12').val() == '' && total == '10') {
+    // this is for gov-08 
+    $('#over12Html').html('1');
+    $('#over12').val('1');
+  }
+  if ($('#open-vacancies').html() == '') {
+    // this is for gov-08 
+    $('#open-vacancies').html('yes');
+  }
+  
+  
+}
+
+//******************* */
+
 
 // Adding numbers on gov-03.html
 
@@ -25,7 +344,7 @@ $('#continueTotal').click(function(e){
   $(".form input[type=text]").each(function () {  
     
     if(isNaN(this.value)) {
-      $('#gov-03-error').removeClass('hidden');
+      $('#gov-error').removeClass('hidden');
       $('#errorMessageNumber').show();
       $(this).addClass('govuk-input--error');
       var ids = $(this).attr('id');
@@ -56,8 +375,8 @@ var numberFour = parseInt($('#parentGovernors').html());
 
 var total = numberOne + numberTwo + numberThree + numberFour
 
-$('#totalGovernors').text('');
-$('#totalGovernors').append(total);
+$('.totalGovernors').text('');
+$('.totalGovernors').append(total);
 
 //*********************** */
 
@@ -72,7 +391,10 @@ $('.form input[type="text"]').blur(function(){
 //*********************** */
 
 // Fill any empty inputs with 0s when clicking on any govuk-button
-$('.govuk-button').click(function(){
+
+
+
+$('.govuk-button').click(function(e){
 
   $('form input').each(function() {
     if(!$(this).val()){  
@@ -80,27 +402,64 @@ $('.govuk-button').click(function(){
     }
   });
 });
+
+
+
+  // $(".form input[type=text]").each(function () {  
+    
+  //   if(isNaN(this.value)) {
+  //     $('#gov-error').removeClass('hidden');
+  //     $('#errorMessageNumber').show();
+  //     $('#errorMessageTotal').hide();
+  //     $(this).addClass('govuk-input--error');
+  //     var ids = $(this).attr('id');
+  //     $('#errorMessageNumber').attr("href", '#' + ids);
+  //     $(this).parent().addClass('govuk-form-group--error')
+  //     $(this).prev('span.govuk-error-message').removeClass('hidden');
+  //     window.scrollTo(0, 0);
+  //     e.preventDefault()
+  //   } else {
+  //     $(this).removeClass('govuk-input--error');
+  //     $(this).parent().removeClass('govuk-form-group--error')
+  //     $(this).prev('span.govuk-error-message').addClass('hidden');
+  //     // $('.form').attr('action', "gov-04")
+  //   }   
+  // });
+
+
 //************************/
 
 
 // Show an error if none of the radio buttons are checked after clicking CTA for gov-04 page
 
-$('#gov04Button').click(function() {
+$('#govButtonForRadios').click(function() {
   if (!$("input[name='correct-number']:checked").val()) {
-    $('#gov04CheckRadio').removeClass('hidden');
+    $('#govCheckRadioError').removeClass('hidden');
     $('.govuk-form-group').addClass('govuk-form-group--error');
-    $('#gov-04-error-for-input').removeClass('hidden');
+    $('#gov-error-for-radios').removeClass('hidden');
     window.scrollTo(0, 0);
     return false;
   }
 });
 
-$('.govuk-radios').change(function(){
-  $('#gov04CheckRadio').addClass('hidden');
-    $('.govuk-form-group').removeClass('govuk-form-group--error');
-    $('#gov-04-error-for-input').addClass('hidden');
-});
+
+
+
+
+// $('.govuk-radios').change(function(){
+//   $('#gov04CheckRadio').addClass('hidden');
+//     $('.govuk-form-group').removeClass('govuk-form-group--error');
+//     $('#gov-04-error-for-input').addClass('hidden');
+// });
 //************************/
+
+
+// Check the value on button click and proceed to the next page for gov-03 page
+
+
+
+
+
 
 
 // Check the value on button click and proceed to the next page for gov-05 page
@@ -111,9 +470,7 @@ var male = parseInt($('#male').val());
   
 var genderTotal = male + female + another + pnts
 
-$("#genderCompButton").click(function(){
-
-  // $(".form input[type=text]").removeClass('govuk-input--error')
+$("#genderCompButton").click(function(e){
 
   var male = parseInt($('#male').val());
       female = parseInt($('#female').val());
@@ -122,20 +479,26 @@ $("#genderCompButton").click(function(){
   
   var genderTotal = male + female + another + pnts
 
+  
   if (genderTotal !== total) {
-    $('#gov-05-error').removeClass('hidden');
+    $('#gov-error').removeClass('hidden');
     $('#errorMessageTotal').show();
     $('#errorMessageNumber').hide();
 
-    // $('.govuk-error-message').addClass('hidden');
-    // $('.govuk-form-group').removeClass('govuk-form-group--error')
-    // $('.govuk-input').removeClass('govuk-input--error')
+    $('.custom-error-group').addClass('govuk-form-group--error');
+    $('#groupInputErrorMessage').removeClass('hide');
+    
     window.scrollTo(0, 0);
     
     $(".form input[type=text]").each(function () {  
+
       if(isNaN(this.value)) {
-        $('#gov-05-error').removeClass('hidden');
-        $('#errorMessageTotal').hide();
+
+        $('.custom-error-group').removeClass('govuk-form-group--error');  // if both errors need to display simultaneously remove this line
+        $('#groupInputErrorMessage').addClass('hide');  // if both errors need to display simultaneously remove this line
+
+        $('#gov-error').removeClass('hidden');
+        $('#errorMessageTotal').hide(); // if both errors need to display simultaneously remove this line 
         $('#errorMessageNumber').show();
         $(this).addClass('govuk-input--error');
         var ids = $(this).attr('id');
@@ -148,13 +511,13 @@ $("#genderCompButton").click(function(){
         $(this).parent().removeClass('govuk-form-group--error')
         $(this).prev('span.govuk-error-message').addClass('hidden');
       }
+
+      
     });
 
-    return false;
+    e.preventDefault();
     
-  } else {
-    $('.form').attr('action', "gov-06").submit();
-  }
+  } 
 
 });
 
@@ -164,13 +527,30 @@ $("#genderCompButtonExit").click(function(){
   $('.form').attr('action', "gov-12").submit();
 });
 
+
+$('#genderTotalInput').val(genderTotal);
+
 if (genderTotal !== total) {
   $('#genderComplete').hide();
+  $('#genderNotStarted').hide();
   $('#genderIncomplete').show();
 } 
 
+if ($('#genderTotalInput').val() == 'NaN') {
+  $('#genderComplete').hide();
+  $('#genderNotStarted').show();
+  $('#genderIncomplete').hide();
+} 
+
+// if ($('#genderTotalInput').val() == '0') {
+//   $('#genderComplete').hide();
+//   $('#genderNotStarted').show();
+//   $('#genderIncomplete').hide();
+// } 
+
 if (genderTotal == total) {
   $('#genderComplete').show();
+  $('#genderNotStarted').hide();
   $('#genderIncomplete').hide();
 }
 //*********************** */
@@ -208,26 +588,69 @@ $("#ageRangesButton").click(function(){
   var ageTotal = sixteen + nineteen + twentyfive + thirtyfive + fortyfive + fiftyfive + sixtyfive + seventysix +agePnts
 
   if (ageTotal !== total) {
-    $('#gov-06-error').removeClass('hidden');
+    $('#gov-error').removeClass('hidden');
+    $('#errorMessageTotal').show();
+    $('#errorMessageNumber').hide();
+
+    $('.custom-error-group').addClass('govuk-form-group--error');
+    $('#groupInputErrorMessage').removeClass('hide');
+
       window.scrollTo(0, 0);
+
+
+      $(".form input[type=text]").each(function () {  
+
+        if(isNaN(this.value)) {
+
+          $('.custom-error-group').removeClass('govuk-form-group--error');
+          $('#groupInputErrorMessage').addClass('hide');
+
+          $('#gov-error').removeClass('hidden');
+          $('#errorMessageTotal').hide();
+          $('#errorMessageNumber').show();
+          $(this).addClass('govuk-input--error');
+          var ids = $(this).attr('id');
+          $('#errorMessageNumber').attr("href", '#' + ids);
+          $(this).parent().addClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').removeClass('hidden');
+          window.scrollTo(0, 0);
+        } else {
+          $(this).removeClass('govuk-input--error');
+          $(this).parent().removeClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').addClass('hidden');
+        }
+      });
+
     return false;
     
-  } else {
-    $('.form').attr('action', "gov-07").submit();
-  }
+  } 
+  // else {
+  //   $('.form').attr('action', "gov-07").submit();
+  // }
 });
 
 $("#ageRangeButtonExit").click(function(){ 
   $('.form').attr('action', "gov-12").submit();
 });
 
+$('#ageTotalInput').val(ageTotal);
+
+
 if (ageTotal !== total) {
   $('#ageComplete').hide();
+  $('#ageNotStarted').hide();
   $('#ageIncomplete').show();
+} 
+
+if ($('#ageTotalInput').val() == 'NaN') {
+  $('#ageComplete').hide();
+  $('#ageNotStarted').show();
+  $('#ageIncomplete').hide();
 } 
 
 if (ageTotal == total) {
   $('#ageComplete').show();
+  $('#ageNotStarted').hide();
   $('#ageIncomplete').hide();
 }
 //************************/
@@ -252,26 +675,70 @@ $("#disabilityButton").click(function(){
   var disabilityTotal = disability + nodisability + disabilitypnts
   
   if (disabilityTotal !== total) {
-    $('#gov-07-error').removeClass('hidden');
+    $('#gov-error').removeClass('hidden');
+    $('#errorMessageTotal').show();
+    $('#errorMessageNumber').hide();
+
+    $('.custom-error-group').addClass('govuk-form-group--error');
+    $('#groupInputErrorMessage').removeClass('hide');
+
       window.scrollTo(0, 0);
+
+      $(".form input[type=text]").each(function () {  
+
+        if(isNaN(this.value)) {
+
+          $('.custom-error-group').removeClass('govuk-form-group--error');
+          $('#groupInputErrorMessage').addClass('hide');
+
+          $('#gov-error').removeClass('hidden');
+          $('#errorMessageTotal').hide();
+          $('#errorMessageNumber').show();
+          $(this).addClass('govuk-input--error');
+          var ids = $(this).attr('id');
+          $('#errorMessageNumber').attr("href", '#' + ids);
+          $(this).parent().addClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').removeClass('hidden');
+          window.scrollTo(0, 0);
+        } else {
+          $(this).removeClass('govuk-input--error');
+          $(this).parent().removeClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').addClass('hidden');
+        }
+      });
+
+
     return false;
     
-  } else {
-    $('.form').attr('action', "gov-08").submit();
-  }
+  } 
+  
+  // else {
+  //   $('.form').attr('action', "gov-08").submit();
+  // }
 });
   
 $("#disabilityButtonExit").click(function(){ 
   $('.form').attr('action', "gov-12").submit();
 });
 
+
+$('#disabilityTotalInput').val(disabilityTotal);
+
 if (disabilityTotal !== total) {
   $('#disabilityComplete').hide();
+  $('#disabilityNotStarted').hide();
   $('#disabilityIncomplete').show();
 } 
 
+if ($('#disabilityTotalInput').val() == 'NaN') {
+  $('#disabilityComplete').hide();
+  $('#disabilityNotStarted').show();
+  $('#disabilityIncomplete').hide();
+}  
+
 if (disabilityTotal == total) {
   $('#disabilityComplete').show();
+  $('#disabilityNotStarted').hide();
   $('#disabilityIncomplete').hide();
 }
 //************************/
@@ -329,14 +796,45 @@ var ethnicTotal = ewsnb + irish + gypsy + roma + otherWhite + wbc + wba + wa + o
 
   
   if (ethnicTotal !== total) {
-    $('#gov-08-error').removeClass('hidden');
+    $('#gov-error').removeClass('hidden');
+    $('#errorMessageTotal').show();
+    $('#errorMessageNumber').hide();
+
+    $('.custom-error-group').addClass('govuk-form-group--error');
+    $('#groupInputErrorMessage').removeClass('hide');
     
       window.scrollTo(0, 0);
+
+      $(".form input[type=text]").each(function () {  
+
+        if(isNaN(this.value)) {
+
+          $('.custom-error-group').removeClass('govuk-form-group--error');
+          $('#groupInputErrorMessage').addClass('hide');
+
+          $('#gov-error').removeClass('hidden');
+          $('#errorMessageTotal').hide();
+          $('#errorMessageNumber').show();
+          $(this).addClass('govuk-input--error');
+          var ids = $(this).attr('id');
+          $('#errorMessageNumber').attr("href", '#' + ids);
+          $(this).parent().addClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').removeClass('hidden');
+          window.scrollTo(0, 0);
+        } else {
+          $(this).removeClass('govuk-input--error');
+          $(this).parent().removeClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').addClass('hidden');
+        }
+      });
+
     return false;
     
-  } else {
-    $('.form').attr('action', "gov-09").submit();
-  }
+  } 
+  
+  // else {
+  //   $('.form').attr('action', "gov-09").submit();
+  // }
 
 });
 
@@ -344,13 +842,33 @@ $("#ethnicButtonExit").click(function(){
   $('.form').attr('action', "gov-12").submit();
 });
 
+// if (ethnicTotal !== total) {
+//   $('#ethnicityComplete').hide();
+//   $('#ethnicityIncomplete').show();
+// } 
+
+// if (ethnicTotal == total) {
+//   $('#ethnicityComplete').show();
+//   $('#ethnicityIncomplete').hide();
+// }
+
+$('#ethnicityTotalInput').val(ethnicTotal);
+
 if (ethnicTotal !== total) {
   $('#ethnicityComplete').hide();
+  $('#ethnicityNotStarted').hide();
   $('#ethnicityIncomplete').show();
 } 
 
+if ($('#ethnicityTotalInput').val() == 'NaN') {
+  $('#ethnicityComplete').hide();
+  $('#ethnicityNotStarted').show();
+  $('#ethnicityIncomplete').hide();
+}  
+
 if (ethnicTotal == total) {
   $('#ethnicityComplete').show();
+  $('#ethnicityNotStarted').hide();
   $('#ethnicityIncomplete').hide();
 }
 
@@ -378,13 +896,45 @@ $("#timeServedButton").click(function(){
 var timeServedTotal = ltoy + oneToFour + fiveToEight + nineToTwelve + overTwelve
   
   if (timeServedTotal !== total) {
-    $('#gov-09-error').removeClass('hidden');
-      window.scrollTo(0, 0);
+    $('#gov-error').removeClass('hidden');
+    $('#errorMessageTotal').show();
+    $('#errorMessageNumber').hide();
+
+    $('.custom-error-group').addClass('govuk-form-group--error');
+    $('#groupInputErrorMessage').removeClass('hide');
+      
+    window.scrollTo(0, 0);
+
+      $(".form input[type=text]").each(function () {  
+
+        if(isNaN(this.value)) {
+
+          $('.custom-error-group').removeClass('govuk-form-group--error');
+          $('#groupInputErrorMessage').addClass('hide');
+
+          $('#gov-error').removeClass('hidden');
+          $('#errorMessageTotal').hide();
+          $('#errorMessageNumber').show();
+          $(this).addClass('govuk-input--error');
+          var ids = $(this).attr('id');
+          $('#errorMessageNumber').attr("href", '#' + ids);
+          $(this).parent().addClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').removeClass('hidden');
+          window.scrollTo(0, 0);
+        } else {
+          $(this).removeClass('govuk-input--error');
+          $(this).parent().removeClass('govuk-form-group--error')
+          $(this).prev('span.govuk-error-message').addClass('hidden');
+        }
+      });
+
     return false;
     
-  } else {
-    $('.form').attr('action', "gov-10").submit();
-  }
+  } 
+  
+  // else {
+  //   $('.form').attr('action', "gov-10").submit();
+  // }
 });
   
 $("#timeServedButtonExit").click(function(){ 
@@ -406,20 +956,20 @@ if (timeServedTotal == total) {
 
 // if a new total value is put into gov-03 then change the url from gov-04 to gov-04b
 
-  $('#onInputChange :input').change(function() {
+  // $('#onInputChange :input').change(function() {
 
-    var tot = 0;
-    $("form :input").each(function() {
-      tot += Number($(this).val());
-    });
+  //   var tot = 0;
+  //   $("form :input").each(function() {
+  //     tot += Number($(this).val());
+  //   });
 
-    $('#totalGovernors').text(tot);
+  //   $('#totalGovernors').text(tot);
 
-    // if ($('#totalGovernors') !== (total)) {
-    //   $('.form').attr('action', "gov-04b");
-    // }
+  //   // if ($('#totalGovernors') !== (total)) {
+  //   //   $('.form').attr('action', "gov-04b");
+  //   // }
 
-  });
+  // });
 //**************************** */
 
 
@@ -427,18 +977,15 @@ if (timeServedTotal == total) {
 // if staff governors value on gov-12 is blank show incomplete tag otherwise show complete
 var staffGov = $('#staffGovernors').html()
   
-    if (staffGov == ('')) {
-      $('#boardRepComplete').hide();
-      $('#boardRepIncomplete').show();
-    }
-    
-    if (staffGov !== ('')) {
-      $('#boardRepComplete').show();
-      $('#boardRepIncomplete').hide();
-    }
+if (staffGov == ('')) {
+  $('#boardRepComplete').hide();
+  $('#boardRepIncomplete').show();
+}
 
-
-    
+if (staffGov !== ('')) {
+  $('#boardRepComplete').show();
+  $('#boardRepIncomplete').hide();
+}
 
 //*********************** */
 
@@ -478,11 +1025,54 @@ if (openVacancies == 'yes' && vacancyValue == '' ) {
   $('#vacancyIncomplete').hide();
 } 
 
+$('#vacancyButton').click(function() {
+  if (!$("input[name='open-vacancies']:checked").val()) {
+    $('#govCheckRadioError').removeClass('hidden');
+    $('.govuk-form-group').addClass('govuk-form-group--error');
+    $('#gov-error-for-radios').removeClass('hidden');
+    window.scrollTo(0, 0);
+    return false;
+  }
+});
+
 $("#vacancyButtonExit").click(function(){ 
   $('.form').attr('action', "gov-12").submit();
 });
 
 //****************** */
+
+
+
+// Check the value on button click and proceed to the next page for gov-11 page
+
+$('#memberVacancyButton').click(function(e){
+  
+  $(".form input[type=text]").each(function () {  
+    
+    if(isNaN(this.value)) {
+      $('#gov-error').removeClass('hidden');
+      $('#errorMessageNumber').show();
+      // $('#errorMessageTotal').hide();
+      $(this).addClass('govuk-input--error');
+      var ids = $(this).attr('id');
+      $('#errorMessageNumber').attr("href", '#' + ids);
+      $(this).parent().addClass('govuk-form-group--error')
+      $(this).prev('span.govuk-error-message').removeClass('hidden');
+      window.scrollTo(0, 0);
+      e.preventDefault()
+    } else {
+      $(this).removeClass('govuk-input--error');
+      $(this).parent().removeClass('govuk-form-group--error')
+      $(this).prev('span.govuk-error-message').addClass('hidden');
+      // $('.form').attr('action', "gov-04")
+    }   
+  });
+
+});
+
+
+//****************** */
+
 
 
 // If the board size on gov-12 is blank then show the incomplete tag otherwise show the complete tag
@@ -499,8 +1089,6 @@ if (boardSize !== '') {
   $('#boardSizeIncomplete').hide();
 } 
 
-//********** */
-
 if ($('#boardRepIncomplete').is(':visible')) {
   // alert('is visible')
   $('#genderGroup').hide()
@@ -510,5 +1098,9 @@ if ($('#boardRepIncomplete').is(':visible')) {
   $('#timeServedGroup').hide()
   $('#vacanciesGroup').hide()
 }
+
+//********** */
+
+
 
 
