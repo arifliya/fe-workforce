@@ -1,0 +1,129 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+  FE Workforce - Board members length of time served
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <div id="gov-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                 <a id="errorMessageTotal" href="#groupInputErrorMessage">Numbers must total to <span class="totalGovernors"></span>, which is the same as the number of board members recorded</a>
+                </li>
+                <li>
+                  <a id="errorMessageNumber" href="#">Enter a numeric value</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+      
+            {% include "./includes/gov_data_tag.html" %}  
+
+      <h1 class="govuk-heading-l">
+        How long have board members served since they were appointed?
+      </h1>
+      
+      <p class="govuk-body">Enter numbers accounting for all board members.</p>
+
+      <span id="groupInputErrorMessage" class="govuk-error-message hide">
+          <span class="govuk-visually-hidden">Error:</span> Numbers must total to <span class="totalGovernors"></span>, which is the same as the number of board members recorded
+        </span>
+
+      <form action="gov-10" method="post" class="form">
+      
+        <div class="custom-error-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="ltoy">
+              Less than 1 year served
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="ltoy" name="ltoy" type="text" value="{{ data['ltoy'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="1to4">
+              1 to 4 years served
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="1to4" name="1to4" type="text" value="{{ data['1to4'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="5to8">
+              5 to 8 years served
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="5to8" name="5to8" type="text" value="{{ data['5to8'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="9to12">
+              9 to 12 years served
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="9to12" name="9to12" type="text" value="{{ data['9to12'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="over12">
+              Over 12 years served
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="over12" name="over12" type="text" value="{{ data['over12'] }}">
+          </div>
+        
+        </div> 
+
+        <div class="govuk-button-group">
+          <button id="timeServedButton" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          <button id="timeServedButtonExit" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Save and exit
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+   
+  </div>
+
+  <div class="govuk-visually-hidden">
+      <div id="journeyPath">{{ data['journeys'] }}</div>
+    <span class="totalGovernors"></span>
+    
+    <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+     
+    <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+      
+    <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+     
+    <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+    </div>
+
+{% endblock %}

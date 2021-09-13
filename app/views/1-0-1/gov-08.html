@@ -1,0 +1,287 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+  FE Workforce - Ethnic groups represented on the board
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <div id="gov-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+              <a id="errorMessageTotal" href="#groupInputErrorMessage">Numbers must total to <span class="totalGovernors"></span>, which is the same as the number of board members recorded</a>
+                </li>
+                <li>
+                  <a id="errorMessageNumber" href="#">Enter a numeric value</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+      
+            {% include "./includes/gov_data_tag.html" %}  
+
+      <h1 class="govuk-heading-l">
+          Which ethnic groups are represented on the board?
+      </h1>
+      
+      <p class="govuk-body">Enter numbers for groups that apply.</p>
+
+      <span id="groupInputErrorMessage" class="govuk-error-message hide">
+        <span class="govuk-visually-hidden">Error:</span> Numbers must total to <span class="totalGovernors"></span>, which is the same as the number of board members recorded
+      </span>
+      
+      <form action="gov-09" method="post" class="form">
+        <div class="custom-error-group">
+          <h2 class="govuk-heading-m">White</h2>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="ewsnb">
+              English / Welsh / Scottish / Northern Irish / British
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="ewsnb" name="ewsnb" type="text" value="{{ data['ewsnb'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="irish">
+              Irish
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="irish" name="irish" type="text" value="{{ data['irish'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="gypsy">
+              Gypsy or Irish Traveller
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="gypsy" name="gypsy" type="text" value="{{ data['gypsy'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="roma">
+              Roma
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="roma" name="roma" type="text" value="{{ data['roma'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="other-white">
+              Any other white background
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="other-white" name="other-white" type="text" value="{{ data['other-white'] }}">
+          </div>
+          
+          <h2 class="govuk-heading-m">Mixed / Multiple ethnic groups</h2>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="wbc">
+              White and Black Caribbean
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="wbc" name="wbc" type="text" value="{{ data['wbc'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="wba">
+              White and Black African
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="wba" name="wba" type="text" value="{{ data['wba'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="wa">
+              White and Asian
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="wa" name="wa" type="text" value="{{ data['wa'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="other-mixed">
+              Any other mixed / Multiple ethnic background
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="other-mixed" name="other-mixed" type="text" value="{{ data['other-mixed'] }}">
+          </div>
+          
+          <h2 class="govuk-heading-m">Asian / Asian British</h2>      
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="indian">
+              Indian
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="indian" name="indian" type="text" value="{{ data['indian'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="pakistani">
+              Pakistani
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="pakistani" name="pakistani" type="text" value="{{ data['pakistani'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="bangladeshi">
+              Bangladeshi
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="bangladeshi" name="bangladeshi" type="text" value="{{ data['bangladeshi'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="chinese">
+              Chinese
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="chinese" name="chinese" type="text" value="{{ data['chinese'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="other-asian">
+              Any other Asian background
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="other-asian" name="other-asian" type="text" value="{{ data['other-asian'] }}">
+          </div>
+
+
+          <h2 class="govuk-heading-m">Black / African / Caribbean / Black British</h2>      
+          
+          <div class="govuk-form-group">
+              <label class="govuk-label" for="african">
+                African background
+              </label>
+              <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+              <input class="govuk-input govuk-input--width-5" id="african" name="african" type="text" value="{{ data['african'] }}">
+            </div>
+            
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="caribbean">
+                Caribbean
+              </label>
+              <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+              <input class="govuk-input govuk-input--width-5" id="caribbean" name="caribbean" type="text" value="{{ data['caribbean'] }}">
+            </div>
+            
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="other-black">
+                Any other Black, Black British or Caribbean background
+              </label>
+              <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+              <input class="govuk-input govuk-input--width-5" id="other-black" name="other-black" type="text" value="{{ data['other-black'] }}">
+            </div>
+          
+          <h2 class="govuk-heading-m">Other ethnic group</h2>      
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="arab">
+              Arab
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="arab" name="arab" type="text" value="{{ data['arab'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="other-ethnic">
+              Any other ethnic group
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="other-ethnic" name="other-ethnic" type="text" value="{{ data['other-ethnic'] }}">
+          </div>
+          
+
+          <h2 class="govuk-heading-m">Does not wish to declare ethnicity</h2>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="ethnicity-pnts">
+              Prefer not to say
+            </label>
+            <span class="govuk-error-message hidden">
+                <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="ethnicity-pnts" name="ethnicity-pnts" type="text" value="{{ data['ethnicity-pnts'] }}">
+          </div>
+        </div>
+        
+        <div class="govuk-button-group">
+          <button id="ethnicButton" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+          <button id="ethnicButtonExit" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Save and exit
+          </button>
+        </div>
+        
+      </form>
+    </div>
+
+   
+  </div>
+
+  <div class="govuk-visually-hidden">
+      <div id="journeyPath">{{ data['journeys'] }}</div>
+    <span class="totalGovernors"></span>
+    
+    <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+     
+    <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+      
+    <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+     
+    <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+    </div>
+
+{% endblock %}

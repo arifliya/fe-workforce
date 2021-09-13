@@ -1,0 +1,60 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+FE Workforce - Total number of board members
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <div id="gov-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                
+                <li>
+                  <a id="errorMessageNumber" href="#">Enter a numeric value</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+      {% include "./includes/gov_data_tag.html" %}  
+      <h1 class="govuk-heading-l">
+        What is the total number of board members allowed by your corporation's instrument and articles of association?
+      </h1>
+      
+      <form action="gov-03" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="board-size">
+            Record the specified board size
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="board-size" name="board-size" type="text" value="{{ data['board-size'] }}">
+        </div>
+   
+        <button id="boardSizeButton" class="govuk-button" data-module="govuk-button">Save and continue</button>
+    
+      </form>
+
+
+
+          
+
+    </div>
+
+   
+  </div>
+
+  <div class="govuk-visually-hidden">
+    <div id="journeyPath">{{ data['journeys'] }}</div>
+    <div id="boardSize">{{ data['board-size'] }}</div>
+  </div>
+
+{% endblock %}

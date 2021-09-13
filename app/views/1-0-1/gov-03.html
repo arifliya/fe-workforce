@@ -1,0 +1,121 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+FE Workforce - Board representation
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div id="gov-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                
+                <li>
+                  <a id="errorMessageNumber" href="#">Enter a numeric value</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+              {% include "./includes/gov_data_tag.html" %}  
+
+        <h1 class="govuk-heading-l">
+        How is the board currently represented?
+      </h1>
+      
+        <p>Enter numbers. Do not include co-opted governors.</p>
+       
+
+      <form id="onInputChange" action="gov-04" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="staff-governors">
+            Staff governors
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Include executive (ex-officio), principal or chief executive and other staff members who are governors
+          </div>
+          <span class="govuk-error-message hidden">
+            <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+          </span>
+          <input class="govuk-input govuk-input--width-5" id="staff-governors" name="staff-governors" type="text" inputmode="numeric" value="{{ data['staff-governors'] }}">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="student-governors">
+            Student governors 
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Include part-time students if applicable
+          </div>
+          <span class="govuk-error-message hidden">
+              <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+            </span>
+          <input class="govuk-input govuk-input--width-5" id="student-governors" name="student-governors" type="text" inputmode="numeric" value="{{ data['student-governors'] }}">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="independent-governors">
+            Independent governors
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Not a member of staff, student or parent at the organisation
+          </div>
+          <span class="govuk-error-message hidden">
+              <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+            </span>
+          <input class="govuk-input govuk-input--width-5" id="independent-governors" name="independent-governors" type="text" inputmode="numeric" value="{{ data['independent-governors'] }}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="parent-governors">
+            Parent governors
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Parent of a learner at the organisation. Not a member of staff or a student at the organisation
+          </div>
+          <span class="govuk-error-message hidden">
+              <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+            </span>
+          <input class="govuk-input govuk-input--width-5" id="parent-governors" name="parent-governors" type="text" inputmode="numeric" value="{{ data['parent-governors'] }}">
+        </div>
+
+          <button id="continueTotal" class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        </form>
+    </div>
+
+   
+  </div>
+
+  
+
+  <div class="govuk-visually-hidden">
+
+    
+
+ 
+        <div id="journeyPath">{{ data['journeys'] }}</div>
+        <span class="totalGovernors"></span> 
+        
+        
+        
+        <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+         
+        <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+          
+        <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+         
+        <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+         
+    </div>
+
+{% endblock %}

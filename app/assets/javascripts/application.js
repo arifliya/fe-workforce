@@ -22,10 +22,12 @@ $('#backLink').click(function (event) {
 
 var journeyPath = $('#journeyPath').html();
 
+// alert(journeyPath)
 
 if (journeyPath == 'new') {
   $('#startButton').attr('href', 'gov-02');
 }
+
 
 if (journeyPath == 'returning') {
   $('#startButton').attr('href', 'dashboard');
@@ -68,11 +70,11 @@ if (journeyPath == 'returning') {
 
   //************** gov-04 ***************** */
   var numberOne = parseInt($('#staffGovernors').html());
-    var numberTwo = parseInt($('#studentGovernors').html());
-    var numberThree = parseInt($('#independantGovernors').html());
-    var numberFour = parseInt($('#parentGovernors').html());
+  var numberTwo = parseInt($('#studentGovernors').html());
+  var numberThree = parseInt($('#independantGovernors').html());
+  var numberFour = parseInt($('#parentGovernors').html());
 
-    var total = numberOne + numberTwo + numberThree + numberFour
+  var total = numberOne + numberTwo + numberThree + numberFour
 
 
   if (total == '10') {
@@ -81,7 +83,7 @@ if (journeyPath == 'returning') {
     $('.govuk-warning-text').removeClass('hidden');
     $('.new-text').removeClass('hidden');
   }
-  
+
   
   //************** gov-05 ***************** */
   
@@ -89,27 +91,29 @@ if (journeyPath == 'returning') {
     // this is for gov-05 
     $('#maleHtml').html('3');
     $('#male').val('3');
-  }
+  } 
 
   if ($('#female').val() == '' && total == '10') {
     // this is for gov-05 
     $('#femaleHtml').html('2');
     $('#female').val('2');
-  }
+  } 
 
   if ($('#another').val() == '' && total == '10') {
     // this is for gov-05 
     $('#anotherHtml').html('3');
     $('#another').val('3');
-  }
+  } 
 
   if ($('#pnts').val() == '' && total == '10') {
     // this is for gov-05 
     $('#pntsHtml').html('2');
     $('#pnts').val('2');
-  }
+  } 
 
+  
 
+  
   //************** gov-06 ***************** */
 
   if ($('#16').val() == '' && total == '10') {
@@ -404,29 +408,6 @@ $('.govuk-button').click(function(e){
 });
 
 
-
-  // $(".form input[type=text]").each(function () {  
-    
-  //   if(isNaN(this.value)) {
-  //     $('#gov-error').removeClass('hidden');
-  //     $('#errorMessageNumber').show();
-  //     $('#errorMessageTotal').hide();
-  //     $(this).addClass('govuk-input--error');
-  //     var ids = $(this).attr('id');
-  //     $('#errorMessageNumber').attr("href", '#' + ids);
-  //     $(this).parent().addClass('govuk-form-group--error')
-  //     $(this).prev('span.govuk-error-message').removeClass('hidden');
-  //     window.scrollTo(0, 0);
-  //     e.preventDefault()
-  //   } else {
-  //     $(this).removeClass('govuk-input--error');
-  //     $(this).parent().removeClass('govuk-form-group--error')
-  //     $(this).prev('span.govuk-error-message').addClass('hidden');
-  //     // $('.form').attr('action', "gov-04")
-  //   }   
-  // });
-
-
 //************************/
 
 
@@ -442,15 +423,6 @@ $('#govButtonForRadios').click(function() {
   }
 });
 
-
-
-
-
-// $('.govuk-radios').change(function(){
-//   $('#gov04CheckRadio').addClass('hidden');
-//     $('.govuk-form-group').removeClass('govuk-form-group--error');
-//     $('#gov-04-error-for-input').addClass('hidden');
-// });
 //************************/
 
 
@@ -522,9 +494,26 @@ $("#genderCompButton").click(function(e){
 });
 
 
+$("#genderCompButtonExit").click(function(e){ 
 
-$("#genderCompButtonExit").click(function(){ 
-  $('.form').attr('action', "gov-12").submit();
+  var male = parseInt($('#male').val());
+      female = parseInt($('#female').val());
+      another = parseInt($('#another').val());
+      pnts = parseInt($('#pnts').val());
+
+  var genderTotal = male + female + another + pnts
+
+
+  if (genderTotal !== total) {
+    
+    $("#genderCompButton").click();
+    e.preventDefault()
+
+  } else {
+
+    $('.form').attr('action', "gov-12")
+  }
+
 });
 
 
@@ -542,11 +531,11 @@ if ($('#genderTotalInput').val() == 'NaN') {
   $('#genderIncomplete').hide();
 } 
 
-// if ($('#genderTotalInput').val() == '0') {
-//   $('#genderComplete').hide();
-//   $('#genderNotStarted').show();
-//   $('#genderIncomplete').hide();
-// } 
+if (journeyPath == 'returning' && $('#genderTotalInput').val() == 'NaN'){
+  $('#genderComplete').hide();
+  $('#genderNotStarted').hide();
+  $('#genderIncomplete').show();
+}
 
 if (genderTotal == total) {
   $('#genderComplete').show();
@@ -572,7 +561,7 @@ var sixteen = parseInt($('#16').val());
 
   var ageTotal = sixteen + nineteen + twentyfive + thirtyfive + fortyfive + fiftyfive + sixtyfive + seventysix +agePnts
 
-$("#ageRangesButton").click(function(){
+$("#ageRangesButton").click(function(e){
 
   var sixteen = parseInt($('#16').val());
       nineteen = parseInt($('#19').val());
@@ -621,16 +610,38 @@ $("#ageRangesButton").click(function(){
         }
       });
 
-    return false;
+    e.preventDefault();
     
   } 
-  // else {
-  //   $('.form').attr('action', "gov-07").submit();
-  // }
+  
 });
 
-$("#ageRangeButtonExit").click(function(){ 
-  $('.form').attr('action', "gov-12").submit();
+
+$("#ageRangeButtonExit").click(function(e){ 
+
+  var sixteen = parseInt($('#16').val());
+      nineteen = parseInt($('#19').val());
+      twentyfive = parseInt($('#25').val());
+      thirtyfive = parseInt($('#35').val());
+      fortyfive = parseInt($('#45').val());
+      fiftyfive = parseInt($('#55').val());
+      sixtyfive = parseInt($('#65').val());
+      seventysix = parseInt($('#76').val());
+      seventysix = parseInt($('#76').val());
+      agePnts = parseInt($('#age-pnts').val());
+
+  var ageTotal = sixteen + nineteen + twentyfive + thirtyfive + fortyfive + fiftyfive + sixtyfive + seventysix +agePnts
+
+  if (ageTotal !== total) {
+    
+    $("#ageRangesButton").click();
+    e.preventDefault()
+
+  } else {
+
+    $('.form').attr('action', "gov-12")
+  }
+
 });
 
 $('#ageTotalInput').val(ageTotal);
@@ -647,6 +658,12 @@ if ($('#ageTotalInput').val() == 'NaN') {
   $('#ageNotStarted').show();
   $('#ageIncomplete').hide();
 } 
+
+if (journeyPath == 'returning' && $('#ageTotalInput').val() == 'NaN'){
+  $('#ageComplete').hide();
+  $('#ageNotStarted').hide();
+  $('#ageIncomplete').show();
+}
 
 if (ageTotal == total) {
   $('#ageComplete').show();
@@ -712,9 +729,6 @@ $("#disabilityButton").click(function(){
     
   } 
   
-  // else {
-  //   $('.form').attr('action', "gov-08").submit();
-  // }
 });
   
 $("#disabilityButtonExit").click(function(){ 
@@ -734,6 +748,12 @@ if ($('#disabilityTotalInput').val() == 'NaN') {
   $('#disabilityComplete').hide();
   $('#disabilityNotStarted').show();
   $('#disabilityIncomplete').hide();
+}  
+
+if (journeyPath == 'returning' && $('#disabilityTotalInput').val() == 'NaN') {
+  $('#disabilityComplete').hide();
+  $('#disabilityNotStarted').hide();
+  $('#disabilityIncomplete').show();
 }  
 
 if (disabilityTotal == total) {
@@ -832,9 +852,6 @@ var ethnicTotal = ewsnb + irish + gypsy + roma + otherWhite + wbc + wba + wa + o
     
   } 
   
-  // else {
-  //   $('.form').attr('action', "gov-09").submit();
-  // }
 
 });
 
@@ -842,15 +859,6 @@ $("#ethnicButtonExit").click(function(){
   $('.form').attr('action', "gov-12").submit();
 });
 
-// if (ethnicTotal !== total) {
-//   $('#ethnicityComplete').hide();
-//   $('#ethnicityIncomplete').show();
-// } 
-
-// if (ethnicTotal == total) {
-//   $('#ethnicityComplete').show();
-//   $('#ethnicityIncomplete').hide();
-// }
 
 $('#ethnicityTotalInput').val(ethnicTotal);
 
@@ -864,6 +872,12 @@ if ($('#ethnicityTotalInput').val() == 'NaN') {
   $('#ethnicityComplete').hide();
   $('#ethnicityNotStarted').show();
   $('#ethnicityIncomplete').hide();
+}  
+
+if (journeyPath == 'returning' && $('#ethnicityTotalInput').val() == 'NaN') {
+  $('#ethnicityComplete').hide();
+  $('#ethnicityNotStarted').hide();
+  $('#ethnicityIncomplete').show();
 }  
 
 if (ethnicTotal == total) {
@@ -932,24 +946,39 @@ var timeServedTotal = ltoy + oneToFour + fiveToEight + nineToTwelve + overTwelve
     
   } 
   
-  // else {
-  //   $('.form').attr('action', "gov-10").submit();
-  // }
 });
   
 $("#timeServedButtonExit").click(function(){ 
   $('.form').attr('action', "gov-12").submit();
 });
 
+
+$('#timeServedTotalInput').val(ethnicTotal);
+
 if (timeServedTotal !== total) {
   $('#timeServedComplete').hide();
+  $('#timeServedNotStarted').hide();
   $('#timeServedIncomplete').show();
 } 
 
+if ($('#timeServedTotalInput').val() == 'NaN') {
+  $('#timeServedComplete').hide();
+  $('#timeServedNotStarted').show();
+  $('#timeServedIncomplete').hide();
+}  
+
+if (journeyPath == 'returning' && $('#timeServedTotalInput').val() == 'NaN') {
+  $('#timeServedComplete').hide();
+  $('#timeServedNotStarted').hide();
+  $('#timeServedIncomplete').show();
+}  
+
 if (timeServedTotal == total) {
   $('#timeServedComplete').show();
+  $('#timeServedNotStarted').hide();
   $('#timeServedIncomplete').hide();
 }
+
 //************************/
 
 

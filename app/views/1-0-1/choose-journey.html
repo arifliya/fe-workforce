@@ -1,0 +1,65 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+FE Workforce - Start
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        
+
+        
+      
+
+        <form method="post" class="form">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Choose a journey
+                </h1>
+              </legend>
+              <div id="changed-name-hint" class="govuk-hint">
+                  Governor data collection
+                </div>
+
+              <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    If you use this prototype often, you'll need to <a class="govuk-link govuk-link--no-visited-state" href="/prototype-admin/clear-data"> clear the data</a> if you change the journey.
+                  </strong>
+                </div>
+
+              
+              <div class="govuk-radios ">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journeys" name="journeys" type="radio" value="new~start">
+                  <label class="govuk-label govuk-radios__label" for="journeys">
+                    New user
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journeys-2" name="journeys" type="radio" value="returning~start">
+                  <label class="govuk-label govuk-radios__label" for="journeys-2">
+                    Returning user
+                  </label>
+                </div>
+              </div>
+          
+            </fieldset>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>      
+    </div>
+  </div>
+
+  <!-- <div>{{ data['journeys'] }}</div> -->
+
+{% endblock %}

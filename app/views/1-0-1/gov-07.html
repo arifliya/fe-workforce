@@ -1,0 +1,101 @@
+
+{% extends "layout-back.html" %}
+
+{% block pageTitle %}
+  FE Workforce - Disability] data
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      
+        <div id="gov-error" class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+              <a id="errorMessageTotal" href="#groupInputErrorMessage">Numbers must total to <span class="totalGovernors"></span>, which is the same as the number of board members recorded</a>
+                </li>
+                <li>
+                    <a id="errorMessageNumber" href="#">Enter a numeric value</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+
+    {% include "./includes/gov_data_tag.html" %}  
+
+    <h1 class="govuk-heading-l">
+      Disability data
+    </h1>
+
+    <span id="groupInputErrorMessage" class="govuk-error-message hide">
+      <span class="govuk-visually-hidden">Error:</span> Numbers must total to <span class="totalGovernors"></span>, which is the same as the number of board members recorded
+    </span>
+      
+    <form action="gov-08" method="post" class="form">
+      <div class="custom-error-group">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="disability">
+            How many board members consider themselves to have a disability?
+          </label>
+          <span class="govuk-error-message hidden">
+              <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+            </span>
+          <input class="govuk-input govuk-input--width-5" id="disability" name="disability" type="text" value="{{ data['disability'] }}">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="no-disability">
+            How many board members do not identify themselves as having a disability?
+          </label>
+          <span class="govuk-error-message hidden">
+              <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+            </span>
+          <input class="govuk-input govuk-input--width-5" id="no-disability" name="no-disability" type="text" value="{{ data['no-disability'] }}">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="disability-pnts">
+            How many prefer not to say?
+          </label>
+          <span class="govuk-error-message hidden">
+              <span class="govuk-visually-hidden">Error:</span>Enter a numeric value  
+            </span>
+          <input class="govuk-input govuk-input--width-5" id="disability-pnts" name="disability-pnts" type="text" value="{{ data['disability-pnts'] }}">
+        </div>
+      </div>
+      
+      <div class="govuk-button-group">
+        <button id="disabilityButton" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        
+        <button id="disabilityButtonExit" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and exit
+        </button>
+      </div>
+      
+    </form>
+
+  </div>
+</div>
+
+<div class="govuk-visually-hidden">
+    <div id="journeyPath">{{ data['journeys'] }}</div>
+    <span class="totalGovernors"></span>
+    
+    <span id="staffGovernors">{{ data['staff-governors'] }}</span> Staff governors
+     
+    <span id="studentGovernors">{{ data['student-governors'] }}</span> Student governors
+      
+    <span id="independantGovernors">{{ data['independent-governors'] }}</span> Independent governors
+     
+    <span id="parentGovernors">{{ data['parent-governors'] }}</span> Parent governors
+  </div>
+
+{% endblock %}
