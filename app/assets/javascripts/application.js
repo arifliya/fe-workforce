@@ -1089,6 +1089,11 @@ $('#memberVacancyButton').click(function(e){
       $('.govuk-form-group').removeClass('govuk-form-group--error')
       $('.govuk-error-message').addClass('hidden');
 
+
+      var filledMessage = "The number entered is too high, it must be the same or less than the number of vacancies"
+          sixMonthsMessage = "The number entered is too high, it must be the same or less than the number of vacancies filled"
+          unfilledMessage = "The number entered is too high, it must be the same or less than the number of vacancies not filled"
+
       if (sixMonthsValue > filledValue && filledValue > vacanciesValue && unfilledValue > remainingValue) {
         // alert('the number is higher than vacancies filled')
       
@@ -1098,19 +1103,19 @@ $('#memberVacancyButton').click(function(e){
         $('#filled').addClass('govuk-input--error')
         $('#filled').parent().addClass('govuk-form-group--error')
         $('#filled').prev().removeClass('hidden');
-        $('#filled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies</span>');
+        $('#filled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + filledMessage + '</span>');
     
         $('#6monthsError').show();
         $('#6months').addClass('govuk-input--error')
         $('#6months').parent().addClass('govuk-form-group--error')
         $('#6months').prev().removeClass('hidden');
-        $('#6months').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies filled</span>');
+        $('#6months').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + sixMonthsMessage + '</span>');
     
         $('#unfilledError').show();
         $('#unfilled').addClass('govuk-input--error')
         $('#unfilled').parent().addClass('govuk-form-group--error')
         $('#unfilled').prev().removeClass('hidden');
-        $('#unfilled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies not filled</span>');
+        $('#unfilled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + unfilledMessage + '</span>');
 
 
         window.scrollTo(0, 0);
@@ -1128,13 +1133,13 @@ $('#memberVacancyButton').click(function(e){
     $('#filled').addClass('govuk-input--error')
     $('#filled').parent().addClass('govuk-form-group--error')
     $('#filled').prev().removeClass('hidden');
-    $('#filled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies</span>');
+    $('#filled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + filledMessage + '</span>');
 
     $('#6monthsError').show();
     $('#6months').addClass('govuk-input--error')
     $('#6months').parent().addClass('govuk-form-group--error')
     $('#6months').prev().removeClass('hidden');
-    $('#6months').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies filled</span>');
+    $('#6months').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + sixMonthsMessage + '</span>');
 
     window.scrollTo(0, 0);
     return false
@@ -1149,8 +1154,8 @@ $('#memberVacancyButton').click(function(e){
     $('#filled').addClass('govuk-input--error')
     $('#filled').parent().addClass('govuk-form-group--error')
     $('#filled').prev().removeClass('hidden');
-    $('#filled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies</span>');
-   
+    $('#filled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + filledMessage + '</span>');
+
     window.scrollTo(0, 0);
     return false
   }
@@ -1163,7 +1168,7 @@ $('#memberVacancyButton').click(function(e){
     $('#6months').addClass('govuk-input--error')
     $('#6months').parent().addClass('govuk-form-group--error')
     $('#6months').prev().removeClass('hidden');
-    $('#6months').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies filled</span>');
+    $('#6months').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + sixMonthsMessage + '</span>');
 
     window.scrollTo(0, 0);
     return false
@@ -1176,38 +1181,65 @@ $('#memberVacancyButton').click(function(e){
     $('#unfilled').addClass('govuk-input--error')
     $('#unfilled').parent().addClass('govuk-form-group--error')
     $('#unfilled').prev().removeClass('hidden');
-    $('#unfilled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>The number must be equal to or less than the number of vacancies not filled</span>');
+    $('#unfilled').prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>' + unfilledMessage + '</span>');
 
     window.scrollTo(0, 0);
     return false
   }
   
-
-
-  $(".form input[type=text]").each(function () {  
+  // $(".form input[type=text]").each(function () {  
     
-    if(isNaN(this.value)) {
-      $('#gov-error').removeClass('hidden');
-      $('.govuk-list li a').hide();
-      $('#errorMessageNumber').show();
-      // $('#errorMessageTotal').hide();
-      $(this).addClass('govuk-input--error');
-      var ids = $(this).attr('id');
-      $('#errorMessageNumber').attr("href", '#' + ids);
-      $(this).parent().addClass('govuk-form-group--error')
-      $(this).prev('span.govuk-error-message.numeric-message').removeClass('hidden');
-      $(this).prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>Enter a numeric value</span>');
-      window.scrollTo(0, 0);
-      e.preventDefault()
-    } else {
-      $(this).removeClass('govuk-input--error');
-      $(this).parent().removeClass('govuk-form-group--error')
-      $(this).prev('span.govuk-error-message.numeric-message').addClass('hidden');
-      // $('.form').attr('action', "gov-04")
-    }   
-  });
+  //   if(isNaN(this.value)) {
+  //     $('#gov-error').removeClass('hidden');
+  //     $('.govuk-list li a').hide();
+  //     $('#errorMessageNumber').show();
+  //     // $('#errorMessageTotal').hide();
+  //     $(this).addClass('govuk-input--error');
+  //     var ids = $(this).attr('id');
+  //     $('#errorMessageNumber').attr("href", '#' + ids);
+  //     $(this).parent().addClass('govuk-form-group--error')
+  //     $(this).prev('span.govuk-error-message.numeric-message').removeClass('hidden');
+  //     $(this).prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>Enter a numeric value</span>');
+  //     window.scrollTo(0, 0);
+  //     e.preventDefault()
+  //   } else {
+  //     $(this).removeClass('govuk-input--error');
+  //     $(this).parent().removeClass('govuk-form-group--error')
+  //     $(this).prev('span.govuk-error-message.numeric-message').addClass('hidden');
+  //     // $('.form').attr('action', "gov-04")
+  //   }   
+  // });
 
-  
+
+
+  $.fn.checkForNans = $(".form input[type=text]").each(  function () {  
+    
+      if(isNaN(this.value)) {
+        $('#gov-error').removeClass('hidden');
+        $('.govuk-list li a').hide();
+        $('#errorMessageNumber').show();
+        // $('#errorMessageTotal').hide();
+        $(this).addClass('govuk-input--error');
+        var ids = $(this).attr('id');
+        $('#errorMessageNumber').attr("href", '#' + ids);
+        $(this).parent().addClass('govuk-form-group--error')
+        $(this).prev('span.govuk-error-message.numeric-message').removeClass('hidden');
+        $(this).prev().html('<span class="govuk-error-message numeric-message"><span class="govuk-visually-hidden">Error:</span>Enter a numeric value</span>');
+        window.scrollTo(0, 0);
+        e.preventDefault()
+      } else {
+        $(this).removeClass('govuk-input--error');
+        $(this).parent().removeClass('govuk-form-group--error')
+        $(this).prev('span.govuk-error-message.numeric-message').addClass('hidden');
+        // $('.form').attr('action', "gov-04")
+      }   
+   
+    })
+
+
+
+    checkForNans();
+    
 
 });
 
