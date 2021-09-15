@@ -1238,7 +1238,7 @@ $('#memberVacancyButton').click(function(e){
 
 
 
-    checkForNans();
+    // checkForNans();
     
 
 });
