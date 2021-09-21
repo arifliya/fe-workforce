@@ -731,8 +731,24 @@ $("#disabilityButton").click(function(){
   
 });
   
-$("#disabilityButtonExit").click(function(){ 
-  $('.form').attr('action', "gov-12").submit();
+$("#disabilityButtonExit").click(function(e){ 
+
+  var disability = parseInt($('#disability').val());
+      nodisability = parseInt($('#no-disability').val());
+      disabilitypnts = parseInt($('#disability-pnts').val());
+  
+  var disabilityTotal = disability + nodisability + disabilitypnts
+
+  if (disabilityTotal !== total) {
+    
+    $("#disabilityButton").click();
+    e.preventDefault()
+
+  } else {
+
+    $('.form').attr('action', "gov-12")
+  }
+
 });
 
 
@@ -855,8 +871,42 @@ var ethnicTotal = ewsnb + irish + gypsy + roma + otherWhite + wbc + wba + wa + o
 
 });
 
-$("#ethnicButtonExit").click(function(){ 
-  $('.form').attr('action', "gov-12").submit();
+$("#ethnicButtonExit").click(function(e){ 
+
+  var ewsnb = parseInt($('#ewsnb').val());
+    irish = parseInt($('#irish').val());
+    gypsy = parseInt($('#gypsy').val());
+    roma = parseInt($('#roma').val());
+    otherWhite = parseInt($('#other-white').val());
+    wbc = parseInt($('#wbc').val());
+    wba = parseInt($('#wba').val());
+    wa = parseInt($('#wa').val());
+    otherMixed = parseInt($('#other-mixed').val());
+    indian = parseInt($('#indian').val());
+    pakistani = parseInt($('#pakistani').val());
+    bangladeshi = parseInt($('#bangladeshi').val());
+    chinese = parseInt($('#chinese').val());
+    otherAsian = parseInt($('#other-asian').val());
+    african = parseInt($('#african').val());
+    caribbean = parseInt($('#caribbean').val());
+    otherBlack = parseInt($('#other-black').val());
+    arab = parseInt($('#arab').val());
+    otherEthnic = parseInt($('#other-ethnic').val());
+    ethnicityPnts = parseInt($('#ethnicity-pnts').val());
+
+var ethnicTotal = ewsnb + irish + gypsy + roma + otherWhite + wbc + wba + wa + otherMixed + indian + pakistani + bangladeshi + chinese + otherAsian + african + caribbean + otherBlack + arab + otherEthnic + ethnicityPnts
+
+  
+  if (ethnicTotal !== total) {
+    
+    $("#ethnicButton").click();
+    e.preventDefault()
+
+  } else {
+
+    $('.form').attr('action', "gov-12")
+  }
+
 });
 
 
@@ -948,12 +998,31 @@ var timeServedTotal = ltoy + oneToFour + fiveToEight + nineToTwelve + overTwelve
   
 });
   
-$("#timeServedButtonExit").click(function(){ 
-  $('.form').attr('action', "gov-12").submit();
+$("#timeServedButtonExit").click(function(e){ 
+
+  var ltoy = parseInt($('#ltoy').val());
+      oneToFour = parseInt($('#1to4').val());
+      fiveToEight = parseInt($('#5to8').val());
+      nineToTwelve = parseInt($('#9to12').val());
+      overTwelve = parseInt($('#over12').val());
+  
+  var timeServedTotal = ltoy + oneToFour + fiveToEight + nineToTwelve + overTwelve
+
+
+  if (timeServedTotal !== total) {
+    
+    $("#timeServedButton").click();
+    e.preventDefault()
+
+  } else {
+
+    $('.form').attr('action', "gov-12")
+  }
+
 });
 
 
-$('#timeServedTotalInput').val(ethnicTotal);
+$('#timeServedTotalInput').val(timeServedTotal);
 
 if (timeServedTotal !== total) {
   $('#timeServedComplete').hide();
@@ -965,7 +1034,7 @@ if ($('#timeServedTotalInput').val() == 'NaN') {
   $('#timeServedComplete').hide();
   $('#timeServedNotStarted').show();
   $('#timeServedIncomplete').hide();
-}  
+}
 
 if (journeyPath == 'returning' && $('#timeServedTotalInput').val() == 'NaN') {
   $('#timeServedComplete').hide();
